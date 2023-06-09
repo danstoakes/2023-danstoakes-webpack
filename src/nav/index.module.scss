@@ -1,0 +1,12 @@
+.nav {
+    ul {
+        column-gap: 1em;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+
+        li {
+            margin-top: 0.2em;
+        }
+    }
+}

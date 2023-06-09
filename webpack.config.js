@@ -26,13 +26,21 @@ const config = {
       
       // Tells webpack to use MiniCss to compile css/scss files. If that fails, use css-loader then sass-loader
       {
-        test: /\.scss$/,
+        test: /\.(sc|sa)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[name]_[local]_[hash:base64:5]"
+              },
+              sourceMap: false
+            }
+          },
+          {  loader: "sass-loader" }
         ]
-      }
+      },
     ]
   },
   plugins: [
