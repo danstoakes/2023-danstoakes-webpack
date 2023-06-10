@@ -18,11 +18,14 @@
             backdrop-filter: blur(10px) brightness(0.8); /* apply the blur */
             pointer-events: none; /* make the overlay click-through */
         }
+
+        div {
+            z-index: 1;
+        }
     }
 
     img {
         width: 30rem;
-        z-index: 1;
     }
 
     // sectionFlipped
@@ -39,6 +42,5 @@
     &Text {
         color: inherit;
         width: 30rem;
-        z-index: 1;
     }
 }

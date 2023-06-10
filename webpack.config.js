@@ -23,7 +23,7 @@ const config = {
         }
       },
       {
-        test: /\.(sc|sa)ss$/,
+        test: /\.(sc|sa|c)ss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
           {

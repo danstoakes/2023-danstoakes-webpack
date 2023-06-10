@@ -32,6 +32,7 @@ class App extends Component {
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
               </>
             }
+            imageFirst={ false }
           />
         </main>
         <Footer />
