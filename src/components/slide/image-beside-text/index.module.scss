@@ -1,0 +1,44 @@
+@import "../../../scss/variables";
+
+.section {
+    align-items: center;
+    color: $white;
+    column-gap: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+
+    &:not(.sectionNoBackground) {
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px) brightness(0.8); /* apply the blur */
+            pointer-events: none; /* make the overlay click-through */
+        }
+    }
+
+    img {
+        width: 30rem;
+        z-index: 1;
+    }
+
+    // sectionFlipped
+    &Flipped {
+        flex-direction: row-reverse;
+    }
+
+    // sectionNoBackground
+    &NoBackground {
+        color: $black;
+    }
+
+    // sectionText
+    &Text {
+        color: inherit;
+        width: 30rem;
+        z-index: 1;
+    }
+}

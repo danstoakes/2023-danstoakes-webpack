@@ -15,7 +15,6 @@ const config = {
     },
   module: {
     rules: [
-      // Tells webpack to use Babel to compile .js files
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -23,8 +22,6 @@ const config = {
           loader: "babel-loader"
         }
       },
-      
-      // Tells webpack to use MiniCss to compile css/scss files. If that fails, use css-loader then sass-loader
       {
         test: /\.(sc|sa)ss$/,
         use: [
@@ -41,6 +38,18 @@ const config = {
           {  loader: "sass-loader" }
         ]
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
+      }
     ]
   },
   plugins: [
