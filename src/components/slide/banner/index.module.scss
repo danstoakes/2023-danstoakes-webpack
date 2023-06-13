@@ -1,0 +1,30 @@
+@import "../../../scss/variables";
+
+.section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    // sectionContent
+    &Content {
+        text-align: center;
+        width: 30vw;
+
+        // sectionContentWrapper
+        &Wrapper {
+            align-items: center;
+            background: $white;
+            display: flex;
+            justify-content: center;
+            margin: {
+                bottom: 2em;
+                left: auto;
+                right: auto;
+                top: 2em;
+            }
+            min-height: 50vh;
+            padding: 2em;
+            width: 60vw;
+        }
+    }
+}
