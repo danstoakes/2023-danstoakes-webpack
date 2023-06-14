@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import "./scss/index.scss";
 
 import promo from "./assets/images/promo.jpg";
+import shopify from "./assets/images/logos/shopify.png";
 import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
 
@@ -16,8 +17,7 @@ class App extends Component {
       <>
         <Header />
         <main>
-          <ImageBesideText
-            image={ promo }
+          <TextWithIconSlider
             text={
               <>
                 <h2>Full-Stack Web Development</h2>
@@ -25,7 +25,7 @@ class App extends Component {
               </>
             }
           />
-          <ImageBesideText 
+          <ImageBesideText
             backgroundImage={ promo }
             image={ promo }
             text={
@@ -34,7 +34,14 @@ class App extends Component {
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
               </>
             }
-            imageFirst={ false }
+            secondText={
+              <>
+                <h2>Full-Stack Web Development</h2>
+                <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
+                <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
+              </>
+            }
+            secondImage={ shopify }
           />
           <TextWithIconSlider
             text={

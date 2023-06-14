@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./index.module.scss";
 
-const Slide = ({ children, backgroundImage = "", extraClasses = "" }) => {
+const Slide = ({ children, backgroundImage = "", extraClasses = "", reference = null }) => {
     const { section } = styles;
   
     const style = backgroundImage
@@ -10,7 +10,7 @@ const Slide = ({ children, backgroundImage = "", extraClasses = "" }) => {
         : null;
   
     return (
-        <section className={`${ section } ${ extraClasses }`} style={ style }>
+        <section className={`${ section } ${ extraClasses }`} style={ style } ref={ reference }>
             { children }
         </section>
     );

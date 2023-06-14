@@ -1,12 +1,14 @@
 @import "../../../scss/variables";
 
 .section {
-    align-items: center;
+    background-attachment: fixed;
     color: $white;
     column-gap: 2em;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    max-height: calc(200vh - #{$header-height-desktop});
+    min-height: calc(200vh - #{$header-height-desktop});
     position: relative;
 
     &:not(.sectionNoBackground) {
@@ -25,12 +27,58 @@
     }
 
     img {
+        transition: opacity 1s ease-in-out;
         width: 30rem;
+    }
+
+    // sectionBlurred
+    &Blurred {
+        mix-blend-mode: hard-light;
+        position: relative;
+
+        &::before, &::after {
+            background: linear-gradient(grey, transparent);
+            content: "";
+            height: 200px;
+            left: 0px;
+            pointer-events: none;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        &::before {
+            top: calc(#{$header-height-desktop} / 2);
+        }
+
+        &::after {
+            bottom: 0px;
+            transform: rotate(180deg);
+        }
     }
 
     // sectionFlipped
     &Flipped {
         flex-direction: row-reverse;
+    }
+
+    // sectionImage
+    &Image {
+        align-items: center;
+        display: flex;
+        height: calc(100vh - #{$header-height-desktop});
+        justify-content: center;
+        position: sticky;
+        top: 65px;
+
+        img:first-child {
+            position: absolute;
+        }
+
+        // sectionImageHidden
+        &Hidden {
+            opacity: 0;
+        }
     }
 
     // sectionNoBackground
@@ -42,5 +90,28 @@
     &Text {
         color: inherit;
         width: 30rem;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        // sectionTextWrapper
+        &Wrapper {
+            div {
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - #{$header-height-desktop});
+                justify-content: center;
+
+                &:nth-child(2) {
+                    position: sticky;
+                    top: 65px;
+                }
+            }
+        }
     }
 }
