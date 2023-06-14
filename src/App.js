@@ -8,6 +8,7 @@ import "./scss/index.scss";
 
 import promo from "./assets/images/promo.jpg";
 import shopify from "./assets/images/logos/shopify.png";
+import bg from "./assets/images/computer-source-code.jpg";
 import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
 
@@ -17,7 +18,8 @@ class App extends Component {
       <>
         <Header />
         <main>
-          <TextWithIconSlider
+          <ImageBesideText
+            image={ promo }
             text={
               <>
                 <h2>Full-Stack Web Development</h2>
@@ -26,7 +28,7 @@ class App extends Component {
             }
           />
           <ImageBesideText
-            backgroundImage={ promo }
+            backgroundImage={ bg }
             image={ promo }
             text={
               <>
@@ -42,6 +44,7 @@ class App extends Component {
               </>
             }
             secondImage={ shopify }
+            imageFirst={ false }
           />
           <TextWithIconSlider
             text={

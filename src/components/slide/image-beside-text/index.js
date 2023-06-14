@@ -11,7 +11,8 @@ const ImageBesideText = ({
     backgroundImage, image, text, secondImage = null, secondText = null, imageFirst = true 
 }) => {
     const { 
-        section, 
+        section,
+        sectionScrollable,
         sectionFlipped, 
         sectionNoBackground, 
         sectionText, 
@@ -40,7 +41,8 @@ const ImageBesideText = ({
             setHideBlur(textOneScrollTop > 0 || textTwoRef.current.offsetTop > textTwoRef.current.clientHeight);
         };
   
-        window.addEventListener("scroll", handleScroll);
+        if (textTwoRef && typeof textTwoRef !== "undefined" && textTwoRef.current && typeof textTwoRef.current !== "undefined")
+            window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -50,7 +52,12 @@ const ImageBesideText = ({
     return (
         <Slide
             backgroundImage={ backgroundImage } 
-            extraClasses={`${ section } ${ !imageFirst ? sectionFlipped : "" } ${ !backgroundImage ? sectionNoBackground : "" }`}
+            extraClasses={`
+                ${ section } 
+                ${ !imageFirst ? sectionFlipped : "" } 
+                ${ !backgroundImage ? sectionNoBackground : "" }
+                ${ secondImage && secondText ? sectionScrollable : "" }
+            `}
             reference={ sectionRef }
         >
             <div className={ sectionImage }>
