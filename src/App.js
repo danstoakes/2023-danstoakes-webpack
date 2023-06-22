@@ -11,6 +11,7 @@ import shopify from "./assets/images/logos/shopify.png";
 import bg from "./assets/images/computer-source-code.jpg";
 import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
+import Button from "./components/button";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
               </>
             }
+            button={ <Button href={`https://www.github.com`} text={`View my projects`} alt={``} /> }
           />
           <ImageBesideText
             backgroundImage={ bg }
@@ -38,13 +40,13 @@ class App extends Component {
             }
             secondText={
               <>
-                <h2>Full-Stack Web Development</h2>
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
               </>
             }
             secondImage={ shopify }
             imageFirst={ false }
+            button={ <Button href={`https://www.github.com`} text={`Get in touch`} alt={``} secondary /> }
           />
           <TextWithIconSlider
             text={

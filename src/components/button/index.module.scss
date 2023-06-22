@@ -1,0 +1,69 @@
+@import "../../scss/variables";
+
+.button {
+    background: $white;
+    border-radius: 15px;
+    color: $white;
+    display: flex;
+    margin-top: 1em;
+    overflow: hidden;
+    padding: 1.5rem;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.5s, outline 0.2s;
+    width: fit-content;
+
+    &Inner {
+        background: $brand-primary;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: transform 0.5s;
+        width: 100%;
+    }
+
+    &:hover {
+        background: $white;
+        color: $brand-primary;
+        outline: 1px solid $brand-primary;
+        outline-offset: -1px;
+
+        .buttonInner {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.secondaryButton {
+    @extend .button;
+
+    background: transparent;
+    color: $black;
+
+    &Inner {
+        @extend .buttonInner;
+
+        background: $white;
+    }
+
+    &:hover {
+        background: transparent;
+        color: $white;
+        outline: 1px solid $white;
+        outline-offset: -1px;
+
+        .secondaryButtonInner {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.button, .secondaryButton {
+    span {
+        line-height: 0;
+        z-index: 2;
+    }
+}

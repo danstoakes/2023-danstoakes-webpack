@@ -118,7 +118,7 @@
 
         // sectionTextWrapper
         &Wrapper {
-            div {
+            > div {
                 display: flex;
                 flex-direction: column;
                 height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
