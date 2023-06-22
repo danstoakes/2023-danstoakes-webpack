@@ -61,8 +61,28 @@
     }
 }
 
-.button, .secondaryButton {
+.ternaryButton {
+    @extend .secondaryButton;
+
+    background: $brand-primary;
+    outline: 1px solid $brand-primary;
+
     span {
+        font-weight: 300 !important;
+    }
+
+    &Inner {
+        @extend .secondaryButtonInner;
+    }
+
+    &:hover {
+        background: $brand-primary;
+    }
+}
+
+.button, .secondaryButton, .ternaryButton {
+    span {
+        font-weight: bold;
         line-height: 0;
         z-index: 2;
     }

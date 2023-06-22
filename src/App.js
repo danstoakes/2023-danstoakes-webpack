@@ -12,6 +12,7 @@ import bg from "./assets/images/computer-source-code.jpg";
 import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
 import Button from "./components/button";
+import ButtonGroup from "./components/button/group";
 
 class App extends Component {
   render() {
@@ -27,7 +28,12 @@ class App extends Component {
                 <p>Innovative and intent software developer with experience making mobile and web applications. Clear understanding of the project lifecycle, including planning, design, testing, and evaluation. Motivated and driven to learn and improve software development practices and also gain experience working for a company and in a team-based environment.</p>
               </>
             }
-            button={ <Button href={`https://www.github.com`} text={`View my projects`} alt={``} /> }
+            buttons={
+              <ButtonGroup>
+                <Button href={`https://www.github.com`} text={`Projects I've done`} alt={``} />
+                <Button href={`https://www.github.com`} text={`Tech I work with`} alt={``} ternary /> 
+              </ButtonGroup>
+            }
           />
           <ImageBesideText
             backgroundImage={ bg }
@@ -46,7 +52,7 @@ class App extends Component {
             }
             secondImage={ shopify }
             imageFirst={ false }
-            button={ <Button href={`https://www.github.com`} text={`Get in touch`} alt={``} secondary /> }
+            buttons={ <Button href={`https://www.github.com`} text={`Get in touch`} alt={``} secondary /> }
           />
           <TextWithIconSlider
             text={

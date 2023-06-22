@@ -8,7 +8,7 @@ import Slide from "..";
 import styles from "./index.module.scss";
 
 const ImageBesideText = ({ 
-    backgroundImage, image, text, secondImage = null, secondText = null, imageFirst = true, button = null
+    backgroundImage, image, text, secondImage = null, secondText = null, imageFirst = true, buttons = null
 }) => {
     const { 
         section,
@@ -78,12 +78,12 @@ const ImageBesideText = ({
             <div className={`${sectionTextWrapper} ${!hideBlur ? sectionBlurred : ''}`}>
                 <div className={ sectionText } ref={ textOneRef }>
                     { text }
-                    {!secondText && button}
+                    {!secondText && buttons}
                 </div>
                 {secondText && (
                     <div className={ sectionText } ref={ textTwoRef }>
                         { secondText }
-                        { button }
+                        { buttons }
                     </div>
                 )}
             </div>
