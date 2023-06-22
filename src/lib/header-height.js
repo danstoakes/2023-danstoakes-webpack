@@ -30,4 +30,11 @@ export default function getHeaderHeight () {
     const conversionFactor = getConversionFactor();
     
     return remToPixels(headerHeightRem, conversionFactor);
-}  
+}
+
+export function getPaddingHeight () {
+    const paddingHeightRem = parseFloat(getComputedStyle(document.body).getPropertyValue("--padding-height"));
+    const conversionFactor = getConversionFactor();
+
+    return remToPixels(paddingHeightRem, conversionFactor);
+}

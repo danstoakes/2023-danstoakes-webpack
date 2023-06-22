@@ -3,13 +3,17 @@
 .section {
     background-attachment: fixed;
     color: $white;
-    column-gap: 2em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     max-height: calc(100vh - #{$header-height-desktop});
     min-height: calc(100vh - #{$header-height-desktop});
     position: relative;
+
+    > div {
+        margin: #{$padding-height-desktop};
+        width: 50%;
+    }
 
     &:not(.sectionNoBackground) {
         &::after {
@@ -62,16 +66,17 @@
     &Image {
         align-items: center;
         display: flex;
-        height: calc(100vh - #{$header-height-desktop});
+        height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
         justify-content: center;
+        overflow: hidden;
         position: sticky;
-        top: 65px;
+        top: #{$header-height-desktop};
 
         img {
-            height: 18rem;
+            height: 30rem;
             object-fit: cover;
             transition: opacity 0.5s ease-in-out;
-            width: 30rem;
+            width: 100%;
         }
 
         // sectionImageHidden
@@ -90,6 +95,10 @@
         max-height: calc(200vh - #{$header-height-desktop});
         min-height: calc(200vh - #{$header-height-desktop});
 
+        .sectionImage {
+            top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+        }
+
         img:first-child {
             position: absolute;
         }
@@ -98,7 +107,6 @@
     // sectionText
     &Text {
         color: inherit;
-        width: 30rem;
 
         > :first-child {
             margin-top: 0;
@@ -113,12 +121,12 @@
             div {
                 display: flex;
                 flex-direction: column;
-                height: calc(100vh - #{$header-height-desktop});
+                height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
                 justify-content: center;
 
                 &:nth-child(2) {
                     position: sticky;
-                    top: 65px;
+                    top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
                 }
             }
         }

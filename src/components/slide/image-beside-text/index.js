@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Fade } from "react-awesome-reveal";
 
-import getHeaderHeight from '../../../lib/header-height';
+import getHeaderHeight, { getPaddingHeight } from '../../../lib/header-height';
 
 import Slide from "..";
 
@@ -36,9 +36,18 @@ const ImageBesideText = ({
             // Change the image being displayed if the user scrolls enough
             setScrolled(sectionScrollTop < 0 && Math.abs(sectionScrollTop, threshold) > threshold);
 
-            const textOneScrollTop = textOneRef.current.getBoundingClientRect().top - getHeaderHeight();
+            // Stop the body scroll on the first paragraph if the user is scrolling slowly
+            if (!document.body.style.overflow && sectionScrollTop <= 0 && sectionScrollTop >= -20) {
+                document.body.style = 'overflow: hidden;';
+                setTimeout(() => {
+                    document.body.style = 'overflow: scroll;';
+                }, 150);
+            }
+
+            const textOneScrollTop = textOneRef.current.getBoundingClientRect().top - getHeaderHeight() - getPaddingHeight();
+            const textTwoScrollTop = textTwoRef.current.getBoundingClientRect().top - getHeaderHeight() - getPaddingHeight();
             // Hide the blur effects at the top/bottom of screen if the user isn't viewing the block
-            setHideBlur(textOneScrollTop > 0 || textTwoRef.current.offsetTop > textTwoRef.current.clientHeight);
+            setHideBlur(textOneScrollTop > 0 && textTwoScrollTop > 0 || textTwoScrollTop <= 0);
         };
   
         if (textTwoRef && typeof textTwoRef !== "undefined" && textTwoRef.current && typeof textTwoRef.current !== "undefined")
