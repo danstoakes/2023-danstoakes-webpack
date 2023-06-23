@@ -13,14 +13,20 @@ import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
 import Button from "./components/button";
 import ButtonGroup from "./components/button/group";
+import Hero from "./components/slide/hero";
 
 class App extends Component {
   render() {
     return (
       <>
         <Header />
+        <Hero
+          title={`Full-Stack Web Development`}
+          content={`All-in-one UI and UX design platform to create UI assets, prototypes and simulations.`}
+        />
         <main>
           <ImageBesideText
+            fragment={`about`}
             image={ promo }
             text={
               <>
@@ -36,6 +42,7 @@ class App extends Component {
             }
           />
           <ImageBesideText
+            fragment={`work`}
             backgroundImage={ bg }
             image={ promo }
             text={
@@ -55,6 +62,7 @@ class App extends Component {
             buttons={ <Button href={`https://www.github.com`} text={`Get in touch`} alt={``} secondary /> }
           />
           <TextWithIconSlider
+            fragment={`tech`}
             text={
               <>
                 <h2>Full-Stack Web Development</h2>
@@ -63,6 +71,7 @@ class App extends Component {
             }
           />
           <Banner
+            fragment={`contact`}
             backgroundImage={ promo }
             text={
               <>

@@ -1,0 +1,44 @@
+@import "../../../scss/variables";
+
+.section {
+    align-items: center;
+    background: $brand-primary;
+    display: flex;
+    justify-content: center;
+    max-height: 100vh;
+    min-height: 100vh;
+
+    &::after {
+        background-color: $brand-primary;
+        opacity: 0.2;
+        content: "";
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+    }
+
+    // sectionContent
+    &Content {
+        color: $white;
+        text-align: start;
+        width: 60vw;
+
+        p {
+            font-size: 28px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        // sectionContentWrapper
+        &Wrapper {
+            align-items: center;
+            display: flex;
+            justify-content: start;
+            min-height: 50vh;
+            padding: 5rem;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+}
