@@ -1,3 +1,4 @@
+@import "../../../scss/animations";
 @import "../../../scss/variables";
 
 .section {
@@ -28,6 +29,22 @@
             font-size: 28px;
             font-weight: 300;
             line-height: 1.6;
+        }
+
+        // sectionContentText
+        &Text {
+            opacity: 0;
+
+            &::after {
+                content: "|";
+            }
+        }
+
+        // sectionContentTyped
+        &Typed {
+            &::after {
+                animation: flashing 1s infinite;
+            }
         }
 
         // sectionContentWrapper
