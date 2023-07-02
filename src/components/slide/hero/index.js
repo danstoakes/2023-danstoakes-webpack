@@ -4,6 +4,9 @@ import Slide from "..";
 
 import styles from "./index.module.scss";
 
+import Slider from "react-slick";
+import VerticalSlider from "../../icon-slider/vertical";
+
 const Hero = ({ backgroundImage, title, content }) => {
     const { section, sectionContent, sectionContentWrapper } = styles;
 
@@ -16,6 +19,7 @@ const Hero = ({ backgroundImage, title, content }) => {
                 <div className={ sectionContent }>
                     <h1>{ title }</h1>
                     <p>{ content }</p>
+                    <VerticalSlider />
                 </div>
             </div>
         </Slide>
