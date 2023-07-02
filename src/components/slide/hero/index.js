@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Fade } from "react-awesome-reveal";
 
 import Slide from "..";
 
@@ -39,7 +40,7 @@ const Hero = ({ backgroundImage, title, content }) => {
             contentRef.current.textContent = null;
             contentRef.current.style.opacity = 1;
             typeContent();
-        }, 400);
+        }, 700);
     }, []);
 
     return (
@@ -49,7 +50,9 @@ const Hero = ({ backgroundImage, title, content }) => {
         >
             <div className={ sectionContentWrapper }>
                 <div className={ sectionContent }>
-                    <h1>{ title }</h1>
+                    <Fade direction="left" duration={ 1000 }>
+                        <h1>{ title }</h1>
+                    </Fade>
                     <p className={`${ sectionContentText } ${ typed ? sectionContentTyped : '' }`} ref={ contentRef }>{ content }</p>
                     <VerticalSlider />
                 </div>
