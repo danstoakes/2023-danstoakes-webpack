@@ -69,8 +69,6 @@
         height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
         justify-content: center;
         overflow: hidden;
-        position: sticky;
-        top: #{$header-height-desktop};
 
         img {
             height: 30rem;
@@ -92,15 +90,28 @@
 
     // sectionScrollable
     &Scrollable {
+        box-sizing: border-box;
+        column-gap: 5rem;
         max-height: calc(200vh - #{$header-height-desktop});
         min-height: calc(200vh - #{$header-height-desktop});
+        padding: 5rem;
 
         .sectionImage {
+            margin: 0;
+            position: sticky;
             top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+        }
+
+        .sectionTextWrapper {
+            margin: 0;
         }
 
         img:first-child {
             position: absolute;
+        }
+
+        &::after {
+            margin-top: -5rem;
         }
     }
 
