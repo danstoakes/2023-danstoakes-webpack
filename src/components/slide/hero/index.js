@@ -5,8 +5,6 @@ import Slide from "..";
 
 import styles from "./index.module.scss";
 
-import VerticalSlider from "../../icon-slider/vertical";
-
 const Hero = ({ backgroundImage, title, content }) => {
     const { 
         section, 
@@ -54,7 +52,6 @@ const Hero = ({ backgroundImage, title, content }) => {
                         <h1>{ title }</h1>
                     </Fade>
                     <p className={`${ sectionContentText } ${ typed ? sectionContentTyped : '' }`} ref={ contentRef }>{ content }</p>
-                    <VerticalSlider />
                 </div>
             </div>
         </Slide>
