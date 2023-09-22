@@ -4,7 +4,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: calc(100vh - #{$header-height-desktop});
-    min-height: calc(100vh - #{$header-height-desktop});
     width: 100vw;
+
+    @media (min-width: $breakpoint-xl) {
+        max-height: calc(100vh - #{$header-height-desktop});
+        min-height: calc(100vh - #{$header-height-desktop});
+    }
 }

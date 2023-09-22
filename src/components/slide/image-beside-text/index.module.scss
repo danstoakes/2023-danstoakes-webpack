@@ -3,16 +3,23 @@
 .section {
     background-attachment: fixed;
     color: $white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-height: calc(100vh - #{$header-height-desktop});
-    min-height: calc(100vh - #{$header-height-desktop});
     position: relative;
 
+    @media (min-width: $breakpoint-xl) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-height: calc(100vh - #{$header-height-desktop});
+        min-height: calc(100vh - #{$header-height-desktop});
+    }
+
     > div {
-        margin: #{$padding-height-desktop};
-        width: 50%;
+        margin: #{$padding-height-mobile};
+
+        @media (min-width: $breakpoint-xl) {
+            margin: #{$padding-height-desktop};
+            width: 50%;
+        }
     }
 
     &:not(.sectionNoBackground) {
@@ -24,6 +31,14 @@
             -webkit-backdrop-filter: blur(10px) brightness(0.8);
             backdrop-filter: blur(10px) brightness(0.8);
             pointer-events: none;
+
+            @media (max-width: $breakpoint-xl) {
+                bottom: 0;
+                left: 0;
+                margin-top: 0;
+                right: 0;
+                top: 0;
+            }
         }
 
         div {
@@ -66,15 +81,22 @@
     &Image {
         align-items: center;
         display: flex;
-        height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
         justify-content: center;
-        overflow: hidden;
+
+        @media (min-width: $breakpoint-xl) {
+            height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
+            overflow: hidden;
+        }
 
         img {
-            height: 30rem;
+            height: 20rem;
             object-fit: cover;
             transition: opacity 0.5s ease-in-out;
             width: 100%;
+
+            @media (min-width: $breakpoint-xl) {
+                height: 30rem;
+            }
         }
 
         // sectionImageHidden
@@ -91,15 +113,25 @@
     // sectionScrollable
     &Scrollable {
         box-sizing: border-box;
-        column-gap: 5rem;
-        max-height: calc(200vh - #{$header-height-desktop});
-        min-height: calc(200vh - #{$header-height-desktop});
-        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        padding: $padding-height-mobile;
+        row-gap: 2rem;
+
+        @media (min-width: $breakpoint-xl) {
+            column-gap: 5rem;
+            max-height: calc(200vh - #{$header-height-desktop});
+            min-height: calc(200vh - #{$header-height-desktop});
+            padding: $padding-height-desktop;
+        }
 
         .sectionImage {
             margin: 0;
             position: sticky;
-            top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+
+            @media (min-width: $breakpoint-xl) {
+                top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+            }
         }
 
         .sectionTextWrapper {
@@ -129,11 +161,27 @@
 
         // sectionTextWrapper
         &Wrapper {
+            @media (max-width: $breakpoint-xl) {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+
             > div {
                 display: flex;
                 flex-direction: column;
-                height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
                 justify-content: center;
+
+                @media (min-width: $breakpoint-xl) {
+                    height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
+                }
+
+                @media (max-width: $breakpoint-xl) {
+                    &:nth-child(1) {
+                        position: sticky;
+                        // top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+                    }
+                }
 
                 &:nth-child(2) {
                     position: sticky;

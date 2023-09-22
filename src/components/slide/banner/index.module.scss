@@ -5,26 +5,41 @@
     display: flex;
     justify-content: center;
 
+    & > div {
+        @media (max-width: $breakpoint-xl) {
+            padding: $padding-height-mobile;
+            width: 100%;
+        }
+    }
+
     // sectionContent
     &Content {
         text-align: center;
-        width: 30vw;
+
+        @media (min-width: $breakpoint-xl) {
+            width: 30vw;
+        }
 
         // sectionContentWrapper
         &Wrapper {
             align-items: center;
             background: $white;
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
-            margin: {
-                bottom: 2em;
-                left: auto;
-                right: auto;
-                top: 2em;
-            }
             min-height: 50vh;
             padding: 2em;
-            width: 60vw;
+            width: 100%;
+
+            @media (min-width: $breakpoint-xl) {
+                margin: {
+                    bottom: 2em;
+                    left: auto;
+                    right: auto;
+                    top: 2em;
+                }
+                width: 60vw;
+            }
         }
     }
 }

@@ -1,8 +1,17 @@
+@import '../../../scss/variables';
+
 .section {
     align-items: center;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: $padding-height-mobile;
+    padding-bottom: 0;
+
+    @media (min-width: $breakpoint-xl) {
+        padding: 0;
+    }
 
     // sectionText
     &Text {
@@ -11,6 +20,13 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        width: 50%;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+            width: 50%;
+        }
     }
 }

@@ -46,7 +46,7 @@ class App extends Component {
           title={`Full-Stack Web Development`}
           content={`All-in-one UI and UX design platform to create UI assets, prototypes and simulations.`}
         />
-        {/* <main>
+        <main>
           <ImageBesideText
             fragment={`about`}
             image={ promo }
@@ -102,7 +102,7 @@ class App extends Component {
               </>
             }
           />
-        </main> */}
+        </main>
         {/* <Footer /> */}
       </div>
     )
