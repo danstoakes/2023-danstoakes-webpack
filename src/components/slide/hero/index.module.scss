@@ -2,16 +2,12 @@
 @import "../../../scss/variables";
 
 @keyframes pulse-opacity {
-    0% {
-        opacity: 0.6;
+    0%, 100% {
+        opacity: 0.1;
     }
 
     50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.6;
+        opacity: 0.2;
     }
 }
 
@@ -47,7 +43,16 @@
 
         // sectionContentSVG
         &SVG {
-            animation: pulse-opacity 2s infinite;
+            opacity: 0.1;
+            // animation: pulse-opacity 2s infinite;
+            box-sizing: border-box;
+            position: absolute;
+            //right: -25%;
+            //bottom: -20%;
+            bottom: -5%;
+            right: -5%;
+            height: 70%;
+            // transform: rotate(20deg);
         }
 
         // sectionContentText
