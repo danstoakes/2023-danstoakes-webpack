@@ -1,0 +1,14 @@
+// bodyNav
+.bodyNav {
+    transition: transform 0.5s ease-in-out;
+
+    // bodyNavClosed
+    &Closed {
+        transform: translateX(0);
+    }
+
+    // bodyNavOpen
+    &Open {
+        transform: translateX(-60vw);
+    }
+}

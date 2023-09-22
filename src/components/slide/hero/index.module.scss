@@ -1,23 +1,18 @@
 @import "../../../scss/animations";
 @import "../../../scss/variables";
 
-@keyframes pulse-opacity {
-    0%, 100% {
-        opacity: 0.1;
-    }
-
-    50% {
-        opacity: 0.2;
-    }
-}
-
 .section {
     align-items: center;
     background: linear-gradient(to bottom, rgb(0, 86, 63), rgb(0, 136, 100));
     display: flex;
     justify-content: center;
-    max-height: 100vh;
     min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    @media (min-width: $breakpoint-xl) {
+        max-height: 100vh;
+    }
 
     &::after {
         background-color: $brand-primary;
@@ -33,26 +28,39 @@
     &Content {
         color: $white;
         text-align: start;
-        width: 60vw;
+
+        @media (min-width: $breakpoint-xl) {
+            width: 60vw;
+        }
 
         p {
-            font-size: 28px;
+            font-size: 1rem;
             font-weight: 300;
             line-height: 1.6;
+
+            @media (min-width: $breakpoint-lg) {
+                font-size: 1.5rem;
+            }
         }
 
         // sectionContentSVG
         &SVG {
+            bottom: 0;
+            height: 100%;
+            left: 0;
             opacity: 0.1;
-            // animation: pulse-opacity 2s infinite;
-            box-sizing: border-box;
+            pointer-events: none;
             position: absolute;
-            //right: -25%;
-            //bottom: -20%;
-            bottom: -5%;
-            right: -5%;
-            height: 70%;
-            // transform: rotate(20deg);
+            right: 0;
+            top: 0;
+            transform: scale(3) rotate(00deg);
+            width: 100%;
+
+            @media (min-width: $breakpoint-lg) {
+                bottom: -5%;
+                height: 70%;
+                right: -5%;
+            }
         }
 
         // sectionContentText
@@ -80,10 +88,14 @@
             align-items: center;
             display: flex;
             justify-content: start;
-            min-height: 50vh;
-            padding: 5rem;
-            width: 100%;
+            padding: 2rem;
             z-index: 2;
+
+            @media (min-width: $breakpoint-lg) {
+                min-height: 50vh;
+                padding: 5rem;
+                width: 100%;
+            }
         }
     }
 }

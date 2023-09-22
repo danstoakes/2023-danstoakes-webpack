@@ -15,16 +15,38 @@ import Button from "./components/button";
 import ButtonGroup from "./components/button/group";
 import Hero from "./components/slide/hero";
 
+import styles from "./scss/_app.scss";
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      navOpen: false,
+    };
+
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  toggleNav() {
+    this.setState(prevState => ({
+      navOpen: !prevState.navOpen,
+    }));
+  }
+
   render() {
+    const { navOpen } = this.state;
+
+    const { bodyNav, bodyNavClosed, bodyNavOpen } = styles;
+
     return (
-      <>
-        <Header />
+      <div className={`${ bodyNav } ${ navOpen ? bodyNavOpen : bodyNavClosed }`}>
+        <Header onOpen={this.toggleNav} />
         <Hero
           title={`Full-Stack Web Development`}
           content={`All-in-one UI and UX design platform to create UI assets, prototypes and simulations.`}
         />
-        <main>
+        {/* <main>
           <ImageBesideText
             fragment={`about`}
             image={ promo }
@@ -80,9 +102,9 @@ class App extends Component {
               </>
             }
           />
-        </main>
-        <Footer />
-      </>
+        </main> */}
+        {/* <Footer /> */}
+      </div>
     )
   }
 };
