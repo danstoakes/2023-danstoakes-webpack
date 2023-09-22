@@ -1,9 +1,23 @@
 @import "../../../scss/animations";
 @import "../../../scss/variables";
 
+@keyframes pulse-opacity {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
 .section {
     align-items: center;
-    background: linear-gradient(111deg, $brand-primary, $brand-primary-light 79.49%);
+    background: linear-gradient(to bottom, rgb(0, 86, 63), rgb(0, 136, 100));
     display: flex;
     justify-content: center;
     max-height: 100vh;
@@ -31,9 +45,18 @@
             line-height: 1.6;
         }
 
+        // sectionContentSVG
+        &SVG {
+            animation: pulse-opacity 2s infinite;
+        }
+
         // sectionContentText
         &Text {
             opacity: 0;
+
+            &::before {
+                content: ">> ";
+            }
 
             &::after {
                 content: "|";
