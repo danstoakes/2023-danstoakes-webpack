@@ -7,15 +7,6 @@ body {
 
     --header-height: #{$header-height-desktop};
     --padding-height: #{$padding-height-desktop};
-
-    & > div {
-        overflow-x: hidden;
-    }
-}
-
-main {
-    position: absolute;
-    top: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -63,52 +63,22 @@
     }
 }
 
-.mobileNav {
-    display: none;
-    left: 100vw;
-    padding: 2rem;
-    padding-top: $header-height-desktop;
-    position: absolute;
-    top: 0;
-    width: 100%;
+// mobileNavSwipeArea
+.mobileNavSwipeArea {
+    height: calc(100% - #{$header-height-desktop});
+    position: fixed;
+    right: 0;
+    top: $header-height-desktop;
+    width: 50vw;
+    z-index: 10;
 
-    @media (max-width: $breakpoint-xl) {
-        display: block;
+    @media (min-width: $breakpoint-xl) {
+        pointer-events: none;
     }
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            &:first-child {
-                margin-top: 0;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            margin: {
-                bottom: 2rem;
-                top: 2rem;
-            }
-        }
-    }
-
-    // mobileNavSwipeArea
-    &SwipeArea {
-        height: calc(100% - #{$header-height-desktop});
-        position: fixed;
-        right: 0;
-        top: $header-height-desktop;
-        width: 50vw;
-        z-index: 10;
-
-        @media (min-width: $breakpoint-xl) {
-            pointer-events: none;
-        }
+    // mobileNavSwipeAreaOpen
+    &Open {
+        right: 60vw;
     }
 }
 

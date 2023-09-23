@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.mobileNav {
+    display: none;
+    height: 100%;
+    left: 100vw;
+    padding: 2rem;
+    padding-top: $header-height-desktop;
+    position: fixed;
+    top: 0;
+    transition: left 0.4s ease-in-out;
+    width: -webkit-fill-available;
+
+    @media (max-width: $breakpoint-xl) {
+        display: block;
+    }
+
+    ul {
+        border-left: 4px solid $brand-primary;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 1rem;
+
+        li {
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            margin: {
+                bottom: 2rem;
+                top: 2rem;
+            }
+
+            a {
+                color: $black;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &Open {
+        left: 40vw;
+        transition: left 0.4s ease-in-out;
+    }
+}

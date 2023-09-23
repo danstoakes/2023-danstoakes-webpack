@@ -8,7 +8,6 @@ const Nav = ({ onOpen }) => {
         hamburgerIcon,
         hamburgerIconLine,
         hamburgerIconOpen,
-        mobileNav,
         navContainer
     } = styles;
 
@@ -20,6 +19,8 @@ const Nav = ({ onOpen }) => {
         onOpen(open);
     }
 
+    // The mobile nav is located in App.js
+
     return (
         <div className={navContainer}>
             <div className={`${hamburgerIcon} ${open ? hamburgerIconOpen : ''}`} onClick={toggleNav}>
@@ -27,14 +28,6 @@ const Nav = ({ onOpen }) => {
                 <div className={hamburgerIconLine}></div>
             </div>
             <SwipableArea isOpen={open} onOpen={toggleNav} />
-            <nav className={mobileNav}>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#tech">Tech</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
             <nav className={desktopNav}>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -48,7 +41,7 @@ const Nav = ({ onOpen }) => {
 };
 
 const SwipableArea = ({ isOpen, onOpen }) => {
-    const { mobileNavSwipeArea } = styles;
+    const { mobileNavSwipeArea, mobileNavSwipeAreaOpen } = styles;
 
     const [startX, setStartX] = useState(null);
     const [startY, setStartY] = useState(null);
@@ -93,7 +86,7 @@ const SwipableArea = ({ isOpen, onOpen }) => {
 
     return (
         <div
-            className={mobileNavSwipeArea}
+            className={`${mobileNavSwipeArea} ${isOpen ? mobileNavSwipeAreaOpen : ''}`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
