@@ -113,10 +113,13 @@
     // sectionScrollable
     &Scrollable {
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
         padding: $padding-height-mobile;
         row-gap: 2rem;
+
+        @media (max-width: $breakpoint-xl) {
+            display: flex;
+            flex-direction: column;
+        }
 
         @media (min-width: $breakpoint-xl) {
             column-gap: 5rem;
@@ -131,6 +134,18 @@
 
             @media (min-width: $breakpoint-xl) {
                 top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+            }
+        }
+
+        .sectionText {
+            @media (max-width: $breakpoint-xl) {
+                &:last-child {
+                    p {
+                        &:first-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
         }
 

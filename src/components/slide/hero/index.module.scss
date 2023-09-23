@@ -3,7 +3,7 @@
 
 .section {
     align-items: center;
-    background: linear-gradient(to bottom, rgb(0, 86, 63), rgb(0, 136, 100));
+    background: $brand-primary;
     display: flex;
     justify-content: center;
     min-height: 100vh;

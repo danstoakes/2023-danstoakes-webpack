@@ -1,0 +1,38 @@
+@import "../../scss/variables";
+
+.footer {
+    align-items: center;
+    background-color: $brand-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: $padding-height-mobile;
+    position: relative;
+
+    p {
+        border-top: 1px solid $white;
+        color: $white;
+        padding-top: 1rem;
+        text-align: center;
+    }
+
+    // footerSVG
+    &SVG {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 0.1;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: scale(8) rotate(00deg);
+        width: 100%;
+
+        @media (min-width: $breakpoint-lg) {
+            bottom: -5%;
+            right: -5%;
+        }
+    }
+}

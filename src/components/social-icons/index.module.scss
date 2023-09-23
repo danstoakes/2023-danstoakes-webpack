@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+
+.iconBar {
+    ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        height: 2em;
+        width: 2em;
+    }
+}

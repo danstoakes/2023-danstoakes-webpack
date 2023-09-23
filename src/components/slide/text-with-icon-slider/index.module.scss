@@ -21,6 +21,10 @@
         justify-content: center;
         text-align: center;
 
+        p {
+            margin: 0;
+        }
+
         > :first-child {
             margin-top: 0;
         }
