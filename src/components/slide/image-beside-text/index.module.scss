@@ -85,7 +85,7 @@
 
         @media (min-width: $breakpoint-xl) {
             height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
-            overflow: hidden;
+            // overflow: hidden;
         }
 
         img {
@@ -131,6 +131,7 @@
         .sectionImage {
             margin: 0;
             position: sticky;
+            position: -webkit-sticky;
 
             @media (min-width: $breakpoint-xl) {
                 top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
@@ -194,6 +195,7 @@
                 @media (max-width: $breakpoint-xl) {
                     &:nth-child(1) {
                         position: sticky;
+                        position: -webkit-sticky;
                     }
                 }
 
@@ -205,6 +207,7 @@
 
                 &:nth-child(2) {
                     position: sticky;
+                    position: -webkit-sticky;
                     top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
                 }
             }
