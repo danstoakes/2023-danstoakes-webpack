@@ -4,6 +4,7 @@
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
+    scroll-behavior: smooth;
 
     --header-height: #{$header-height-desktop};
     --padding-height: #{$padding-height-desktop};

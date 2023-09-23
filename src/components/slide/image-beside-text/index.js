@@ -8,9 +8,9 @@ import Slide from "..";
 import styles from "./index.module.scss";
 
 const ImageBesideText = ({ 
-    backgroundImage, image, text, secondImage = null, secondText = null, imageFirst = true, buttons = null
+    backgroundImage, image, imageAlt, imageAltHidden, text, fragment, secondImage = null, secondImageAlt = null, secondImageAltHidden = false, secondText = null, imageFirst = true, buttons = null
 }) => {
-    const { 
+    const {
         section,
         sectionScrollable,
         sectionFlipped, 
@@ -69,12 +69,17 @@ const ImageBesideText = ({
                 ${ !backgroundImage ? sectionNoBackground : "" }
                 ${ secondImage && secondText ? sectionScrollable : "" }
             `}
+            fragment={fragment}
             reference={ sectionRef }
         >
             <div className={ sectionImage }>
-                <img className={ scrolled ? sectionImageHidden : "" } src={ image }></img>
+                <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
+                {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
                 {secondImage && (
-                    <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } />
+                    <>
+                        <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
+                        {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
+                    </>
                 )}
             </div>
             <div className={`${sectionTextWrapper} ${!hideBlur ? sectionBlurred : ''}`}>

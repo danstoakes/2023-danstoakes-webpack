@@ -81,6 +81,7 @@
     &Image {
         align-items: center;
         display: flex;
+        flex-direction: column-reverse;
         justify-content: center;
 
         @media (min-width: $breakpoint-xl) {
@@ -97,6 +98,10 @@
             @media (min-width: $breakpoint-xl) {
                 height: 30rem;
             }
+        }
+
+        span {
+            padding: 1rem;
         }
 
         // sectionImageHidden
