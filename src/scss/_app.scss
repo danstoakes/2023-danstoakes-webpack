@@ -1,14 +1,13 @@
+@import "../scss/variables.scss";
+
 // bodyNav
 .bodyNav {
     transition: transform 0.4s ease-in-out;
 
-    // bodyNavClosed
-    &Closed {
-        transform: translateX(0);
-    }
-
     // bodyNavOpen
     &Open {
-        transform: translateX(-60vw);
+        @media (max-width: $breakpoint-xl) {
+            transform: translateX(-60vw);
+        }
     }
 }

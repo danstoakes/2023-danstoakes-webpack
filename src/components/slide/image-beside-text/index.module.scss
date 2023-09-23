@@ -194,7 +194,12 @@
                 @media (max-width: $breakpoint-xl) {
                     &:nth-child(1) {
                         position: sticky;
-                        // top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
+                    }
+                }
+
+                @media (min-width: $breakpoint-xl) {
+                    &:nth-child(1) {
+                        top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
                     }
                 }
 
