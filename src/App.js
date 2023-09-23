@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import "./scss/index.scss";
 
 import About from "./assets/images/about.jpg";
+import Work from "./assets/images/computer-generic-background.png";
 import Furn from "./assets/images/furn.png";
 import Powerhouse from "./assets/images/powerhouse.png";
 import PHP from "./assets/images/PHP.jpg";
@@ -80,20 +81,21 @@ class App extends Component
                 />
                 <ImageBesideText
                   fragment={`work`}
-                  backgroundImage={bg}
+                  backgroundImage={Work}
                   image={Furn}
                   imageAlt={`furn, an e-commerce website built using Shopify.`}
                   text={
                     <>
-                      <h2>Some of my <span className={highlightedText}>work</span></h2>
+                      <h2>Some of my work</h2>
                       <p>My favourite framework to work on currently is Shopify, an e-commerce platform that was created in 2006. With over 4.5 million Shopify sites online, 10% of the global e-commerce market is possessed by Shopify.</p>
                       <p>Since being introduced to the framework, I've added to existing themes, as well as created new ones. Shopify is a very fast paced framework, so there's always a lot of features that can be implemented, such as advanced filtering, international markets, and pushing the boundaries on what can be sold on the platform.</p>
                     </>
                   }
                   secondText={
                     <>
-                      <p>A framework I work with quite frequently is Wordpress. With over 40% of all websites running on the platform, Wordpress is a beast in the website space, and a market leader with curated themes, excellent plugin support, and open source code.</p>
-                      <p>The first project I lead was a Wordpress website for Powerhouse Studios, which involved creating a custom theme from the ground up that showcased their brand.</p>
+                      <p>A framework that I work with quite frequently is Wordpress. With over 40% of all websites running on the platform, Wordpress is a beast in the website space, and a market leader with curated themes, excellent plugin support, and open source code.</p>
+                      <p>The first project which I lead was a Wordpress site for Powerhouse Studios, a photography agency in Leeds. The project involved building a custom theme from scratch to reflect their brand, as well as taking care of planning, implementation, and testing.</p>
+                      <p>For a full overview of my work, get in touch with me below!</p>
                     </>
                   }
                   secondImage={Powerhouse}

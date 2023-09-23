@@ -13,6 +13,8 @@ const ImageBesideText = ({
     const {
         section,
         sectionScrollable,
+        sectionScrollableBackground,
+        sectionScrollableNoBackground,
         sectionFlipped, 
         sectionNoBackground, 
         sectionText, 
@@ -68,6 +70,8 @@ const ImageBesideText = ({
                 ${ !imageFirst ? sectionFlipped : "" } 
                 ${ !backgroundImage ? sectionNoBackground : "" }
                 ${ secondImage && secondText ? sectionScrollable : "" }
+                ${ backgroundImage && (secondImage && secondText) ? sectionScrollableBackground : "" }
+                ${ !backgroundImage && (secondImage && secondText) ? sectionScrollableNoBackground : "" }
             `}
             fragment={fragment}
             reference={ sectionRef }
@@ -82,7 +86,7 @@ const ImageBesideText = ({
                     </>
                 )}
             </div>
-            <div className={`${sectionTextWrapper} ${!hideBlur ? sectionBlurred : ''}`}>
+            <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
                 <div className={ sectionText } ref={ textOneRef }>
                     { text }
                     {!secondText && buttons}
