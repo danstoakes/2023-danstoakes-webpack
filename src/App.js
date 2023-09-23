@@ -103,7 +103,7 @@ class App extends Component {
             }
           />
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }
