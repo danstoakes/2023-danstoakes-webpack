@@ -62,21 +62,18 @@ const ImageBesideText = ({
         }
     }, []);
 
-    const FadeWrapper = ({ direction, duration, scrollable, reversed, children }) => {
+    const FadeWrapper = ({ direction, duration, reversed, children }) => {
         if (direction == "left" && reversed)
             direction = "right";
         else if (direction == "right" && reversed)
             direction = "left";
-
-        if (scrollable)
-            return children;
 
         return (
             <Fade direction={ direction } duration={ duration } triggerOnce={ true }>
                 { children }
             </Fade>
         );
-    }
+    };
 
     return (
         <Slide
@@ -92,32 +89,62 @@ const ImageBesideText = ({
             fragment={fragment}
             reference={ sectionRef }
         >
-            <FadeWrapper direction="left" durection={ 1000 } scrollable={ secondImage && secondText } reversed={ !imageFirst }>
-                <div className={ sectionImage }>
-                    <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
-                    {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
-                    {secondImage && (
-                        <>
-                            <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
-                            {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
-                        </>
-                    )}
-                </div>
-            </FadeWrapper>
-            <FadeWrapper direction="right" durection={ 1000 } scrollable={ secondImage && secondText } reversed={ !imageFirst }>
-                <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
-                    <div className={ sectionText } ref={ textOneRef }>
-                        { text }
-                        {!secondText && buttons}
+            {/* Extremely redundant method because of a glitch in the image opacity transition. Only seems to occur when trying to have a FadeWrapper component */}
+            {secondImage && secondText ? (
+                <>
+                    <div className={ sectionImage }>
+                        <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
+                        {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
+                        {secondImage && (
+                            <>
+                                <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
+                                {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
+                            </>
+                        )}
                     </div>
-                    {secondText && (
-                        <div className={ sectionText } ref={ textTwoRef }>
-                            { secondText }
-                            { buttons }
+                    <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
+                        <div className={ sectionText } ref={ textOneRef }>
+                            { text }
+                            {!secondText && buttons}
                         </div>
-                    )}
-                </div>
-            </FadeWrapper>
+                        {secondText && (
+                            <div className={ sectionText } ref={ textTwoRef }>
+                                { secondText }
+                                { buttons }
+                            </div>
+                        )}
+                    </div>
+                </>
+            ) : (
+                <>
+                    <FadeWrapper direction="left" duration={ 1000 } reversed={ !imageFirst }>
+                        <div className={ sectionImage }>
+                            <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
+                            {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
+                            {secondImage && (
+                                <>
+                                    <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
+                                    {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
+                                </>
+                            )}
+                        </div>
+                    </FadeWrapper>
+                    <FadeWrapper direction="right" duration={ 1000 } reversed={ !imageFirst }>
+                        <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
+                            <div className={ sectionText } ref={ textOneRef }>
+                                { text }
+                                {!secondText && buttons}
+                            </div>
+                            {secondText && (
+                                <div className={ sectionText } ref={ textTwoRef }>
+                                    { secondText }
+                                    { buttons }
+                                </div>
+                            )}
+                        </div>
+                    </FadeWrapper>
+                </>
+            )}
         </Slide>
     );
 };
