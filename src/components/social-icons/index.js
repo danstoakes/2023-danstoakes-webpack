@@ -12,12 +12,12 @@ const SocialIcons = () => {
         <div className={iconBar}>
             <ul>
                 <li>
-                    <a href=''>
+                    <a href='https://github.com/danstoakes' aria-label='The link to my GitHub portfolio.'>
                         <img src={GitHub} />
                     </a>
                 </li>
                 <li>
-                    <a href=''>
+                    <a href='https://www.linkedin.com/in/dan-stoakes/' aria-label='The link to my LinkedIn profile.'>
                         <img src={LinkedIn} />
                     </a>
                 </li>

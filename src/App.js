@@ -67,7 +67,7 @@ class App extends Component
                   imageAltHidden={true}
                   text={
                     <>
-                      <h2>A bit <span className={highlightedText}>about</span> me</h2>
+                      <h2>A bit<span className={highlightedText}> about </span>me</h2>
                       <p>I'm a Full-Stack Web Developer with 2 years of agency experience, starting in a junior position and working up to project lead across a range of different new build sites and ongoing retainers.</p>
                       <p>Crafting elegant and intuitive solutions for complex problems has been my focus for the best part of the last decade. With a diverse background in developing Android and iOS applications, games, and various tools, I've acquired a versatile skill set that spans a wide range of technologies.</p>
                     </>

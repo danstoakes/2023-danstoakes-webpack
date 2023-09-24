@@ -108,7 +108,8 @@
             width: 100%;
 
             @media (min-width: $breakpoint-xl) {
-                height: 30rem;
+                min-height: 30rem;
+                max-height: 30rem;
             }
         }
 
@@ -116,6 +117,7 @@
             color: $brand-primary;
             font-weight: bold;
             padding: 1rem;
+            text-align: center;
         }
 
         // sectionImageHidden
