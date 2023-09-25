@@ -20,7 +20,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                     <div className={ sectionContent }>
                         { text }
                         {hasForm && (
-                            <form className={ sectionContactForm } name="contact" netlify>
+                            <form className={ sectionContactForm } name="contact" data-netlify="true">
                                 <input type="text" name="name" placeholder="Name" />
                                 <input type="email" name="email" placeholder="Email" />
                                 <select name="type">

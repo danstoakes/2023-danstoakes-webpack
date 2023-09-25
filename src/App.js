@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import Header from "./components/header";
 import ImageBesideText from "./components/slide/image-beside-text";
 import Footer from "./components/footer";
-
-import "./scss/index.scss";
+import getHeaderHeight from "./lib/header-height";
+import MobileNav from "./nav/mobile-nav";
 
 import About from "./assets/images/about.jpg";
 import Work from "./assets/images/computer-generic-background.png";
@@ -14,16 +14,14 @@ import PHP from "./assets/images/PHP.jpg";
 import Graduation from "./assets/images/graduation.jpg";
 
 import promo from "./assets/images/promo.jpg";
-import shopify from "./assets/images/logos/shopify.png";
-import bg from "./assets/images/computer-source-code.jpg";
 import Banner from "./components/slide/banner";
 import TextWithIconSlider from "./components/slide/text-with-icon-slider";
 import Button from "./components/button";
 import ButtonGroup from "./components/button/group";
 import Hero from "./components/slide/hero";
 
+import "./scss/index.scss";
 import styles from "./scss/_app.scss";
-import MobileNav from "./nav/mobile-nav";
 
 class App extends Component 
 {
@@ -35,6 +33,30 @@ class App extends Component
     };
 
     this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  componentDidMount () {
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const hash = this.getAttribute("href");
+        const target = document.querySelector(hash);
+
+        if (!target) 
+          return;
+
+        const elementPosition = target.offsetTop;
+        const offsetPosition = elementPosition - getHeaderHeight();
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        history.pushState(null, null, hash);
+      });
+    });
   }
 
   toggleNav () {
