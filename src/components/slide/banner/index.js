@@ -30,6 +30,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                     <option value="other">Other</option>
                                 </select>
                                 <textarea rows={ 4 } name="message"></textarea>
+                                <input type="hidden" name="contact" value="contact" />
                                 <Button extraClasses={ bannerButton } type="submit" text={`Send message`} alt={``} />
                             </form>
                         )}
