@@ -81,7 +81,11 @@
 }
 
 .button, .secondaryButton, .ternaryButton {
+    border: none;
+    cursor: pointer;
+
     span {
+        font-size: medium;
         font-weight: bold;
         line-height: 0;
         z-index: 2;

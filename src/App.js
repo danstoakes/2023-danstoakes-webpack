@@ -122,6 +122,7 @@ class App extends Component
                       <p>Fill in the form below if you fancy having a chat.</p>
                     </>
                   }
+                  hasForm
                 />
                 <ImageBesideText
                   fragment={`more`}
