@@ -20,7 +20,8 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                     <div className={ sectionContent }>
                         { text }
                         {hasForm && (
-                            <form className={ sectionContactForm } name="contact" data-netlify="true">
+                            <form className={ sectionContactForm } name="Contact" method="POST">
+                                <input type="hidden" name="Contact" value="Contact" />
                                 <input type="text" name="name" placeholder="Name" />
                                 <input type="email" name="email" placeholder="Email" />
                                 <select name="type">
@@ -30,7 +31,6 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                     <option value="other">Other</option>
                                 </select>
                                 <textarea rows={ 4 } name="message"></textarea>
-                                <input type="hidden" name="contact" value="contact" />
                                 <Button extraClasses={ bannerButton } type="submit" text={`Send message`} alt={``} />
                             </form>
                         )}
