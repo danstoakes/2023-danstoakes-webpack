@@ -1,6 +1,7 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const config = {
@@ -53,6 +54,14 @@ const config = {
     new HtmlWebPackPlugin({
       template: "./index.html",
       filename: "./index.html"
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: 'public'
+        },
+      ],
     }),
     new MiniCssExtractPlugin({ filename: 'style.css' })
   ]
