@@ -23,9 +23,8 @@ import Hero from "./components/slide/hero";
 import "./scss/index.scss";
 import styles from "./scss/_app.scss";
 
-class App extends Component 
-{
-  constructor (props) {
+class App extends Component {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -35,7 +34,7 @@ class App extends Component
     this.toggleNav = this.toggleNav.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -43,7 +42,7 @@ class App extends Component
         const hash = this.getAttribute("href");
         const target = document.querySelector(hash);
 
-        if (!target) 
+        if (!target)
           return;
 
         const elementPosition = target.offsetTop;
@@ -59,13 +58,13 @@ class App extends Component
     });
   }
 
-  toggleNav () {
+  toggleNav() {
     this.setState(prevState => ({
       navOpen: !prevState.navOpen,
     }));
   }
 
-  render () {
+  render() {
     const { navOpen } = this.state;
 
     const { bodyNav, bodyNavOpen, container, highlightedText, pageContainer } = styles;

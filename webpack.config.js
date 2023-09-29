@@ -1,18 +1,15 @@
-// webpack.config.js
-// Import dependencies
 const path = require('path');
-// Takes our css/scss files and compiles them into one single css file
-const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
-// Using index.html as a template puts an html file in our build folder
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-// Define the config object
+
 const config = {
-  entry: './src/index.js', // Our entry file, will take all files connected to index.js and compile them together
-  
+  entry: './src/index.js',
+
   output: {
-        path: path.resolve(__dirname,'build'), // Tells webpack where to put the output files
-        filename: 'bundle.js', // Naming our compiled ES5 file
-    },
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js',
+  },
   module: {
     rules: [
       {
@@ -35,7 +32,7 @@ const config = {
               sourceMap: false
             }
           },
-          {  loader: "sass-loader" }
+          { loader: "sass-loader" }
         ]
       },
       {
@@ -54,11 +51,11 @@ const config = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./index.html", // Template for the html file used in build
-      filename: "./index.html" // Name of the html file webpack will put in the build folder
+      template: "./index.html",
+      filename: "./index.html"
     }),
-    new MiniCssExtractPlugin({filename: 'style.css'}) // Name of our CSS file in the build folder
+    new MiniCssExtractPlugin({ filename: 'style.css' })
   ]
 };
-// export the config object so when webpack runs it knows to use it.
+
 module.exports = config;
