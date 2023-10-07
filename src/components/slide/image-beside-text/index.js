@@ -8,7 +8,18 @@ import Slide from "..";
 import styles from "./index.module.scss";
 
 const ImageBesideText = ({ 
-    backgroundImage, image, imageAlt, imageAltHidden, text, fragment, secondImage = null, secondImageAlt = null, secondImageAltHidden = false, secondText = null, imageFirst = true, buttons = null
+    backgroundImage, 
+    image, 
+    imageAlt, 
+    imageAltHidden, 
+    text, 
+    fragment, 
+    secondImage = null, 
+    secondImageAlt = null, 
+    secondImageAltHidden = false, 
+    secondText = null, 
+    imageFirst = true, 
+    buttons = null
 }) => {
     const {
         section,
@@ -106,6 +117,14 @@ const ImageBesideText = ({
                         <div className={ sectionText } ref={ textOneRef }>
                             { text }
                             {!secondText && buttons}
+                        </div>
+                        <div className={ sectionImage }>
+                            {secondImage && (
+                                <>
+                                    <img src={ secondImage } alt={ secondImageAlt } />
+                                    {secondImageAlt && !secondImageAltHidden && <span>{ secondImageAlt }</span>}
+                                </>
+                            )}
                         </div>
                         {secondText && (
                             <div className={ sectionText } ref={ textTwoRef }>

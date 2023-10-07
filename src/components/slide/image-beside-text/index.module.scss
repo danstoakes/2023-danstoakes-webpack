@@ -118,11 +118,19 @@
             font-weight: bold;
             padding: 1rem;
             text-align: center;
+
+            @media (max-width: $breakpoint-xl) {
+                display: none;
+            }
         }
 
         // sectionImageHidden
         &Hidden {
-            opacity: 0;
+            display: none;
+
+            @media(min-width: $breakpoint-xl) {
+                opacity: 0;
+            }
         }
     }
 
@@ -179,10 +187,10 @@
 
         .sectionImage {
             margin: 0;
-            position: sticky;
-            position: -webkit-sticky;
 
             @media (min-width: $breakpoint-xl) {
+                position: sticky;
+                position: -webkit-sticky;
                 top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
             }
         }
@@ -204,7 +212,9 @@
         }
 
         img:first-child {
-            position: absolute;
+            @media (min-width: $breakpoint-xl) {
+                position: absolute;
+            }
         }
 
         &::after {
@@ -255,8 +265,11 @@
                 }
 
                 &:nth-child(2) {
-                    position: sticky;
-                    position: -webkit-sticky;
+                    @media (min-width: $breakpoint-xl) {
+                        position: sticky;
+                        position: -webkit-sticky;
+                    }
+                    
                     top: calc(#{$header-height-desktop} + #{$padding-height-desktop});
                 }
             }
