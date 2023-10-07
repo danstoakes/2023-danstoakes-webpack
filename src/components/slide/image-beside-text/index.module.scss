@@ -1,5 +1,11 @@
 @import "../../../scss/variables";
 
+.sectionSecondImage {
+    @media (min-width: $breakpoint-xl) {
+        display: none !important;
+    }
+}
+
 .section {
     background-attachment: fixed;
     color: $white;

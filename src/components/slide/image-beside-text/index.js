@@ -23,6 +23,7 @@ const ImageBesideText = ({
 }) => {
     const {
         section,
+        sectionSecondImage,
         sectionScrollable,
         sectionScrollableBackground,
         sectionScrollableNoBackground,
@@ -118,7 +119,7 @@ const ImageBesideText = ({
                             { text }
                             {!secondText && buttons}
                         </div>
-                        <div className={ sectionImage }>
+                        <div className={`${sectionImage} ${sectionSecondImage}`}>
                             {secondImage && (
                                 <>
                                     <img src={ secondImage } alt={ secondImageAlt } />
