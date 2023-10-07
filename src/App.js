@@ -32,36 +32,54 @@ class App extends Component {
     };
 
     this.toggleNav = this.toggleNav.bind(this);
+    this.updateHtmlOverflow = this.updateHtmlOverflow.bind(this);
   }
 
   componentDidMount() {
-    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    document.querySelectorAll("a[href^='#']").forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
 
         const hash = this.getAttribute("href");
         const target = document.querySelector(hash);
 
-        if (!target)
-          return;
+        if (!target) return;
 
         const elementPosition = target.offsetTop;
         const offsetPosition = elementPosition - getHeaderHeight();
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
 
         history.pushState(null, null, hash);
       });
     });
+
+    // Call the updateHtmlOverflow function when the component mounts
+    this.updateHtmlOverflow();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // Call the updateHtmlOverflow function when the navOpen state changes
+    if (prevState.navOpen !== this.state.navOpen) {
+      this.updateHtmlOverflow();
+    }
   }
 
   toggleNav() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       navOpen: !prevState.navOpen,
     }));
+  }
+
+  updateHtmlOverflow() {
+    // Get a reference to the <html> tag
+    const htmlElement = document.documentElement;
+
+    // Set the overflow property based on the navOpen state
+    htmlElement.style.overflow = this.state.navOpen ? "hidden" : "auto";
   }
 
   render() {

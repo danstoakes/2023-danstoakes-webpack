@@ -3,4 +3,12 @@
 .buttonGroup {
     column-gap: 1em;
     display: flex;
+
+    a:last-child {
+        display: none;
+
+        @media (min-width: $breakpoint-md) {
+            display: flex;
+        }
+    }
 }
