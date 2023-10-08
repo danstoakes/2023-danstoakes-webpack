@@ -20,7 +20,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                     <div className={ sectionContent }>
                         { text }
                         {hasForm && (
-                            <form className={ sectionContactForm } name="Contact" method="POST">
+                            <form className={ sectionContactForm } name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                                 <input type="hidden" name="form-name" value="Contact" />
                                 <input type="text" name="name" placeholder="Name" />
                                 <input type="email" name="email" placeholder="Email" />
