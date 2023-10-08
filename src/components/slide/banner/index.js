@@ -21,7 +21,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                         { text }
                         {hasForm && (
                             <form className={ sectionContactForm } name="Contact" method="POST">
-                                <input type="hidden" name="Contact" value="Contact" />
+                                <input type="hidden" name="form-name" value="Contact" />
                                 <input type="text" name="name" placeholder="Name" />
                                 <input type="email" name="email" placeholder="Email" />
                                 <select name="type">
