@@ -79,7 +79,11 @@ class App extends Component {
     const htmlElement = document.documentElement;
 
     // Set the overflow property based on the navOpen state
-    htmlElement.style.overflow = this.state.navOpen ? "hidden" : "auto";
+
+    if (this.state.navOpen)
+      htmlElement.style.overflow = "hidden";
+    else
+      htmlElement.style.overflow = "";
   }
 
   render() {

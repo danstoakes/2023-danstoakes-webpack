@@ -132,8 +132,6 @@
 
         // sectionImageHidden
         &Hidden {
-            display: none;
-
             @media(min-width: $breakpoint-xl) {
                 opacity: 0;
             }

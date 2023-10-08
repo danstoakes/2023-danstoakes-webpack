@@ -41,6 +41,7 @@ const ImageBesideText = ({
     const textTwoRef = useRef(null);
 
     const [hideBlur, setHideBlur] = useState(true);
+    const [hideSecondImage, setHideSecondImage] = useState(true);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -72,6 +73,9 @@ const ImageBesideText = ({
                 window.removeEventListener("scroll", handleScroll);
             };
         }
+
+        if (window.innerWidth < 1000)
+            setHideSecondImage(false);
     }, []);
 
     const FadeWrapper = ({ direction, duration, reversed, children }) => {
@@ -107,7 +111,7 @@ const ImageBesideText = ({
                     <div className={ sectionImage }>
                         <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
                         {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
-                        {secondImage && (
+                        {secondImage && hideSecondImage && (
                             <>
                                 <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
                                 {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
@@ -119,14 +123,17 @@ const ImageBesideText = ({
                             { text }
                             {!secondText && buttons}
                         </div>
-                        <div className={`${sectionImage} ${sectionSecondImage}`}>
-                            {secondImage && (
-                                <>
-                                    <img src={ secondImage } alt={ secondImageAlt } />
-                                    {secondImageAlt && !secondImageAltHidden && <span>{ secondImageAlt }</span>}
-                                </>
-                            )}
-                        </div>
+                        {!hideSecondImage ? (
+                            <div className={`${sectionImage} ${sectionSecondImage}`}>
+                                {secondImage && (
+                                    <>
+                                        <img src={ secondImage } alt={ secondImageAlt } />
+                                        {secondImageAlt && !secondImageAltHidden && <span>{ secondImageAlt }</span>}
+                                    </>
+                                )}
+                            </div>
+                        ) : null}
+
                         {secondText && (
                             <div className={ sectionText } ref={ textTwoRef }>
                                 { secondText }
