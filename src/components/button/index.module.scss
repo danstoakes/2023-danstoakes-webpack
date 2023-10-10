@@ -10,8 +10,24 @@
     padding: 1.5rem;
     position: relative;
     text-decoration: none;
-    transition: color 0.5s, outline 0.2s;
+    transition: color 0.5s;
     width: fit-content;
+
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        transition: border-color 0.2s ease;
+        pointer-events: none;
+        z-index: 1;
+    }
 
     &Inner {
         background: $brand-primary;
@@ -26,10 +42,11 @@
     }
 
     &:hover {
-        background: $white;
         color: $brand-primary;
-        outline: 1px solid $brand-primary;
-        outline-offset: -1px;
+
+        &::before {
+            border-color: $brand-primary;
+        }
 
         .buttonInner {
             transform: translateX(100%);
@@ -43,17 +60,21 @@
     background: transparent;
     color: $black;
 
+    &::before {
+        @extend .button::before;
+    }
+
     &Inner {
         @extend .buttonInner;
-
         background: $white;
     }
 
     &:hover {
-        background: transparent;
         color: $white;
-        outline: 1px solid $white;
-        outline-offset: -1px;
+
+        &::before {
+            border-color: $white;
+        }
 
         .secondaryButtonInner {
             transform: translateX(100%);
@@ -65,7 +86,12 @@
     @extend .secondaryButton;
 
     background: $brand-primary;
-    outline: 1px solid $brand-primary;
+
+    &::before {
+        @extend .button::before;
+
+        border-color: $brand-primary;
+    }
 
     span {
         font-weight: 300 !important;
@@ -77,6 +103,10 @@
 
     &:hover {
         background: $brand-primary;
+
+        &::before {
+            border-color: $brand-primary;
+        }
     }
 }
 
