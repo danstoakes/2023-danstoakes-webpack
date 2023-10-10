@@ -34,7 +34,7 @@ const Nav = ({ onOpen }) => {
                     <li><a href="#work">Work</a></li>
                     <li><a href="#tech">Tech</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#more">More</a></li>
+                    <li><a href="#extra">Extra</a></li>
                 </ul>
             </nav>
         </div>

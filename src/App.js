@@ -150,7 +150,7 @@ class App extends Component {
                   fragment={`tech`}
                   text={
                     <>
-                      <h2>Technologies and Frameworks</h2>
+                      <h2><span className={highlightedText}>Technologies</span> and Frameworks</h2>
                       <p>One of the best aspects of web development is the sheer number of fantastic, high quality technologies and frameworks that are available.</p>
                       <p>The full list of technologies and frameworks I'm familiar with is available <a href=''>here</a>.</p>
                     </>
@@ -161,19 +161,19 @@ class App extends Component {
                   backgroundImage={promo}
                   text={
                     <>
-                      <h2>Get in touch</h2>
+                      <h2>Get in <span className={highlightedText}> contact</span></h2>
                       <p>Fill in the form below if you fancy having a chat.</p>
                     </>
                   }
                   hasForm
                 />
                 <ImageBesideText
-                  fragment={`more`}
+                  fragment={`extra`}
                   image={PHP}
                   imageAlt={`The first HTML & PHP I ever wrote, December 2016.`}
                   text={
                     <>
-                      <h2>A <span className={highlightedText}>career</span> in code</h2>
+                      <h2>A few <span className={highlightedText}>extra</span> details</h2>
                       <p>I'm originally self-taught, with my programming journey beginning when I was 11. I started getting into code by reverse engineering people's games on the sandbox platform, ROBLOX. I experimented with creating games, simulations, and models that I would make available to other users. The games were pretty successful, boosting my confidence and pushing me to continue adding new features and updates.</p>
                       <p>By the time college came round, I'd been coding in my spare time for about 5 years. It was at college that I was introduced to coding as a career, and most importantly, it was when I was introduced to web development. Working with other like-minded programmers to solve complex problems rapidly propelled me forward and pushed me to focus on development as my career aspiration at University.</p>
                     </>
