@@ -19,7 +19,8 @@ const ImageBesideText = ({
     secondImageAltHidden = false, 
     secondText = null, 
     imageFirst = true, 
-    buttons = null
+    buttons = null,
+    objectFit = 'cover'
 }) => {
     const {
         section,
@@ -109,11 +110,11 @@ const ImageBesideText = ({
             {secondImage && secondText ? (
                 <>
                     <div className={ sectionImage }>
-                        <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
+                        <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt } style={{objectFit: objectFit}}></img>
                         {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
                         {secondImage && hideSecondImage && (
                             <>
-                                <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
+                                <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } style={{objectFit: objectFit}} />
                                 {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
                             </>
                         )}
@@ -127,7 +128,7 @@ const ImageBesideText = ({
                             <div className={`${sectionImage} ${sectionSecondImage}`}>
                                 {secondImage && (
                                     <>
-                                        <img src={ secondImage } alt={ secondImageAlt } />
+                                        <img src={ secondImage } alt={ secondImageAlt } style={{objectFit: objectFit}} />
                                         {secondImageAlt && !secondImageAltHidden && <span>{ secondImageAlt }</span>}
                                     </>
                                 )}
@@ -146,11 +147,11 @@ const ImageBesideText = ({
                 <>
                     <FadeWrapper direction="left" duration={ 1000 } reversed={ !imageFirst }>
                         <div className={ sectionImage }>
-                            <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt }></img>
+                            <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt } style={{objectFit: objectFit}}></img>
                             {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
                             {secondImage && (
                                 <>
-                                    <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } />
+                                    <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } style={{objectFit: objectFit}} />
                                     {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
                                 </>
                             )}

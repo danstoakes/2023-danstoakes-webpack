@@ -125,6 +125,7 @@ class App extends Component {
                 <ImageBesideText
                   fragment={`work`}
                   backgroundImage={Work}
+                  objectFit={`contain`}
                   image={Furn}
                   imageAlt={`furn, an e-commerce website built using Shopify.`}
                   text={
