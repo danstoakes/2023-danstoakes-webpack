@@ -130,15 +130,20 @@ class App extends Component {
                   text={
                     <>
                       <h2>Some of my work</h2>
-                      <p>My favourite framework to work on currently is Shopify, an e-commerce platform that was created in 2006. With over 4.5 million Shopify sites online, 10% of the global e-commerce market is possessed by Shopify.</p>
-                      <p>Since being introduced to the framework, I've added to existing themes, as well as created new ones. Shopify is a very fast paced framework, so there's always a lot of features that can be implemented, such as advanced filtering, international markets, and pushing the boundaries on what can be sold on the platform.</p>
+                      <p>A framework I work with daily is Shopify, an e-commerce platform with over 4.5 million sites online. I'm proficient in both Shopify Online Store 1 and 2, having worked on custom themes for both releases, including existing site management and new builds from the ground up.</p>
+                      <p>Some notable bits of work I've done on Shopify are:</p>
+                      <ul>
+                        <li>Made an intricate custom filtering system that significantly reduced costs for a client.</li>
+                        <li>Expanded the platform's capabilities by implementing custom per-metre pricing for fabric products.</li>
+                        <li>Enabled hassle-free international capabilities by integrating full translation and currency support for a global store.</li>
+                        <li>Created a suite of customised sections for the client to effortlessly manage within the OS 2 framework.</li>
+                      </ul>
                     </>
                   }
                   secondText={
                     <>
-                      <p>A framework that I work with quite frequently is Wordpress. With over 40% of all websites running on the platform, Wordpress is a beast in the website space, and a market leader with curated themes, excellent plugin support, and open source code.</p>
-                      <p>The first project which I lead was a Wordpress site for Powerhouse Studios, a photography agency in Leeds. The project involved building a custom theme from scratch to reflect their brand, as well as taking care of planning, implementation, and testing.</p>
-                      <p>For a full overview of my work, get in touch with me below!</p>
+                      <p>Working with WordPress is a fundamental part of my work. Given that WordPress drives over 40% of all websites online, it's an indispensable tool for any web developer. I have substantial experience in working with Gutenberg blocks, advanced custom fields, and a diverse array of custom themes, allowing me to create tailored solutions for a wide range of projects.</p>
+                      <p>My first major project involved leading a complete website build for Powerhouse Studios, a photography agency located in Leeds. This project involved crafting a tailor-made WordPress theme to faithfully represent their brand, as well as a straightforward and highly customisable Gutenberg backend.</p>
                     </>
                   }
                   secondImage={Powerhouse}
@@ -151,8 +156,7 @@ class App extends Component {
                   text={
                     <>
                       <h2><span className={highlightedText}>Technologies</span> and Frameworks</h2>
-                      <p>One of the best aspects of web development is the sheer number of fantastic, high quality technologies and frameworks that are available.</p>
-                      <p>The full list of technologies and frameworks I'm familiar with is available <a href=''>here</a>.</p>
+                      <p>Making great websites is made a lot easier thanks to the range of fantastic frameworks that are available. The full list of technologies and frameworks I'm familiar with is available <a href="">here</a>.</p>
                     </>
                   }
                 />

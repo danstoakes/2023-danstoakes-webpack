@@ -238,6 +238,10 @@
             margin-bottom: 0;
         }
 
+        > p, > ul {
+            margin-top: 0;
+        }
+
         // sectionTextWrapper
         &Wrapper {
             @media (max-width: $breakpoint-xl) {
