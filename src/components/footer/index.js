@@ -14,7 +14,7 @@ const Footer = () => {
         <footer className={footer}>
             <SocialIcons />
             <p>© {currentYear} Dan Stoakes. All Rights Reserved.</p>
-            <img className={footerSVG} src={HeroTrace} alt="My SVG" />
+            <img className={footerSVG} src={HeroTrace} alt="Circuit board trace effect" />
         </footer>
     );
 };

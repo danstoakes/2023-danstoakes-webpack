@@ -39,14 +39,14 @@ const IconSlider = () => {
     return (
         <div className={ sliderWrapper }>
             <Slider {...settings}>
-                <img src={ shopify } />
-                <img src={ laravel } />
-                <img src={ wordpress } />
-                <img src={ contentful } />
-                <img src={ react } />
-                <img src={ gatsby } />
-                <img src={ netlify } />
-                <img src={ git } />
+                <img src={ shopify } alt="Shopify logo" />
+                <img src={ laravel } alt="Laravel logo" />
+                <img src={ wordpress } alt="Wordpress logo" />
+                <img src={ contentful } alt="Contentful logo" />
+                <img src={ react } alt="React logo" />
+                <img src={ gatsby } alt="Gatsby logo" />
+                <img src={ netlify } alt="Netlify logo" />
+                <img src={ git } alt="Git logo" />
             </Slider>
         </div>
     );
