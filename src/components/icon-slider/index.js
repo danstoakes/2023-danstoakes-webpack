@@ -9,6 +9,8 @@ import wordpress from "../../assets/images/logos/wordpress.png";
 import contentful from "../../assets/images/logos/contentful.png";
 import react from "../../assets/images/logos/react.png";
 import gatsby from "../../assets/images/logos/gatsby.png";
+import netlify from "../../assets/images/logos/netlify.png";
+import git from "../../assets/images/logos/git.png";
 
 const IconSlider = () => {
     const { slider, sliderWrapper } = styles;
@@ -43,6 +45,8 @@ const IconSlider = () => {
                 <img src={ contentful } />
                 <img src={ react } />
                 <img src={ gatsby } />
+                <img src={ netlify } />
+                <img src={ git } />
             </Slider>
         </div>
     );
