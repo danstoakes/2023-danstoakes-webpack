@@ -99,7 +99,7 @@ class App extends Component {
           <div className={pageContainer}>
             <Hero
               title={`Full-Stack Web Development`}
-              content={`All-in-one UI and UX design platform to create UI assets, prototypes and simulations.`}
+              content={`Innovative solutions for tailored, user-focused designs with a seamless admin experience.`}
             />
             <div className={container}>
               <main>
@@ -131,7 +131,7 @@ class App extends Component {
                   text={
                     <>
                       <h2>Some of my work</h2>
-                      <p>A framework I work with daily is Shopify, an e-commerce platform with over 4.5 million sites online. I'm proficient in both Shopify Online Store 1 and 2, having worked on custom themes for both releases, including existing site management and new builds from the ground up.</p>
+                      <p>A framework I work with daily is Shopify, an e-commerce platform with over 4.5 million sites online. I've worked on numerous custom themes, including work on existing sites and new builds.</p>
                       <p>Some notable bits of work I've done on Shopify are:</p>
                       <ul>
                         <li>Made an intricate custom filtering system that significantly reduced costs for a client.</li>
@@ -143,7 +143,7 @@ class App extends Component {
                   }
                   secondText={
                     <>
-                      <p>Working with WordPress is a fundamental part of my work. Given that WordPress drives over 40% of all websites online, it's an indispensable tool for any web developer. I have substantial experience in working with Gutenberg blocks, advanced custom fields, and a diverse array of custom themes, allowing me to create tailored solutions for a wide range of projects.</p>
+                      <p>Another Framework I use regularly is Wordpress. Given that over 40% of all websites online are driven by the platform, it's an indispensable tool for any web developer. I have experience working with Gutenberg blocks, advanced custom fields, and a diverse array of custom themes, allowing me to create tailored solutions across a wide range of projects.</p>
                       <p>My first major project involved leading a complete website build for Powerhouse Studios, a photography agency located in Leeds. This project involved crafting a tailor-made WordPress theme to faithfully represent their brand, as well as a straightforward and highly customisable Gutenberg backend.</p>
                     </>
                   }
