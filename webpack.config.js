@@ -61,6 +61,10 @@ const config = {
           from: 'public',
           to: 'public'
         },
+        {
+          from: 'robots.txt',
+          to: 'public/robots.txt'
+        },
       ],
     }),
     new MiniCssExtractPlugin({ filename: 'style.css' })
