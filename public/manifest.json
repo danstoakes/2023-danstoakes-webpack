@@ -1,7 +1,7 @@
 {
     "name": "Dan Stoakes | Web Developer",
     "short_name": "Dan Stoakes",
-    "start_url": "./",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#007958",
     "theme_color": "#007958",
