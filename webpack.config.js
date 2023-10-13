@@ -63,7 +63,7 @@ const config = {
         },
         {
           from: 'robots.txt',
-          to: 'public/robots.txt'
+          to: 'robots.txt'
         },
       ],
     }),
