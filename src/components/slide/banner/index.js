@@ -22,11 +22,11 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                         {hasForm && (
                             <form className={ sectionContactForm } name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                                 <input type="hidden" name="form-name" value="Contact" />
-                                <input type="text" name="name" placeholder="Name" />
-                                <input type="email" name="email" placeholder="Email" />
-                                <div class={ sectionContactFormSelect }>
+                                <input type="text" name="name" placeholder="Name" autoComplete="name" />
+                                <input type="email" name="email" placeholder="Email" autoComplete="email" />
+                                <div class={ sectionContactFormSelect } autoComplete="off">
                                     <label for="type">Enquiry type</label>
-                                    <select name="type">
+                                    <select name="type" id="type">
                                         <option value="employer">Employer</option>
                                         <option value="recruiter">Recruiter</option>
                                         <option value="collaborator">Collaborator</option>
@@ -34,7 +34,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                     </select>
                                 </div>
                                 <label for="message">Message</label>
-                                <textarea rows={ 4 } name="message"></textarea>
+                                <textarea rows={ 4 } name="message" id="message" autoComplete="off"></textarea>
                                 <Button extraClasses={ bannerButton } type="submit" text={`Send message`} alt={``} />
                             </form>
                         )}

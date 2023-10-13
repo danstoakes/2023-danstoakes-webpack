@@ -40,17 +40,17 @@
   </head>
   <body>
     <form name="Contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" placeholder="Name" />
-      <input type="email" name="email" placeholder="Email" />
-      <label for="type">Enquiry type</label>
-      <select name="type">
+      <input type="text" name="name" placeholder="Name" autocomplete="name" />
+      <input type="email" name="email" placeholder="Email" autocomplete="email" />
+      <label for="form_type">Enquiry type</label>
+      <select name="type" id="form_type" autocomplete="off">
         <option value="employer">Employer</option>
         <option value="recruiter">Recruiter</option>
         <option value="collaborator">Collaborator</option>
         <option value="other">Other</option>
       </select>
-      <label for="message">Message</label>
-      <textarea rows="4" name="message"></textarea>
+      <label for="form_message">Message</label>
+      <textarea rows="4" name="message" id="form_message" autocomplete="off"></textarea>
     </form>
     <div id="root">
       
