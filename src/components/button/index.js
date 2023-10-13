@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./index.module.scss";
 
-const Button = ({ alt, href, type, text, extraClasses = "", secondary = false, ternary = false }) => {
+const Button = ({ alt, href, type, text, extraClasses = "", secondary = false, ternary = false, target = "_self" }) => {
     const { 
         button, buttonInner, secondaryButton, secondaryButtonInner, ternaryButton, ternaryButtonInner 
     } = styles;
@@ -20,6 +20,7 @@ const Button = ({ alt, href, type, text, extraClasses = "", secondary = false, t
                 className={`${ ternary ? ternaryButton : secondary ? secondaryButton : button} ${ extraClasses }`} 
                 alt={ alt } 
                 href={ href }
+                target={target}
             >
                 <div className={ ternary ? ternaryButtonInner : secondary ? secondaryButtonInner : buttonInner }></div>
                 <span>{ text }</span>

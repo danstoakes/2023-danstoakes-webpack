@@ -117,8 +117,8 @@ class App extends Component {
                   }
                   buttons={
                     <ButtonGroup>
-                      <Button href={`https://www.github.com`} text={`Projects I've done`} alt={``} />
-                      <Button href={`https://www.github.com`} text={`Tech I work with`} alt={``} ternary />
+                      <Button href={`https://www.github.com`} text={`Projects I've done`} alt={``} target={`_blank`} />
+                      <Button href={`#tech`} text={`Tech I work with`} alt={``} ternary />
                     </ButtonGroup>
                   }
                 />
@@ -150,14 +150,14 @@ class App extends Component {
                   secondImage={Powerhouse}
                   secondImageAlt={`Powerhouse, a photography website built using Wordpress.`}
                   imageFirst={false}
-                  buttons={<Button href={`https://www.github.com`} text={`Get in touch`} alt={``} secondary />}
+                  buttons={<Button href={`#contact`} text={`Get in touch`} alt={``} secondary />}
                 />
                 <TextWithIconSlider
                   fragment={`tech`}
                   text={
                     <>
                       <h2><span className={highlightedText}>Technologies</span> and Frameworks</h2>
-                      <p>Making great websites is made a lot easier thanks to the range of fantastic frameworks that are available. The full list of technologies and frameworks I'm familiar with is available <a href="">here</a>.</p>
+                      <p>Making great websites is made a lot easier thanks to the range of fantastic frameworks that are available. The full list of technologies and frameworks I'm familiar with is available <a href="https://github.com/danstoakes/2023-tech-stack/tree/master/tech">here</a>.</p>
                     </>
                   }
                 />
