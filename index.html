@@ -42,12 +42,14 @@
     <form name="Contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" placeholder="Name" />
       <input type="email" name="email" placeholder="Email" />
+      <label for="type">Enquiry type</label>
       <select name="type">
         <option value="employer">Employer</option>
         <option value="recruiter">Recruiter</option>
         <option value="collaborator">Collaborator</option>
         <option value="other">Other</option>
       </select>
+      <label for="message">Message</label>
       <textarea rows="4" name="message"></textarea>
     </form>
     <div id="root">

@@ -25,6 +25,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                 <input type="text" name="name" placeholder="Name" />
                                 <input type="email" name="email" placeholder="Email" />
                                 <div class={ sectionContactFormSelect }>
+                                    <label for="type">Enquiry type</label>
                                     <select name="type">
                                         <option value="employer">Employer</option>
                                         <option value="recruiter">Recruiter</option>
@@ -32,6 +33,7 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
+                                <label for="message">Message</label>
                                 <textarea rows={ 4 } name="message"></textarea>
                                 <Button extraClasses={ bannerButton } type="submit" text={`Send message`} alt={``} />
                             </form>
