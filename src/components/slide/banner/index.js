@@ -24,16 +24,16 @@ const Banner = ({ backgroundImage, text, fragment, hasForm = false }) => {
                                 <input type="hidden" name="form-name" value="Contact" />
                                 <input type="text" name="name" placeholder="Name" autoComplete="name" />
                                 <input type="email" name="email" placeholder="Email" autoComplete="email" />
-                                <div class={ sectionContactFormSelect } autoComplete="off">
-                                    <label for="type">Enquiry type</label>
-                                    <select name="type" id="type">
+                                <div className={ sectionContactFormSelect }>
+                                    <label htmlFor="type">Enquiry type</label>
+                                    <select name="type" id="type" autoComplete="off">
                                         <option value="employer">Employer</option>
                                         <option value="recruiter">Recruiter</option>
                                         <option value="collaborator">Collaborator</option>
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
-                                <label for="message">Message</label>
+                                <label htmlFor="message">Message</label>
                                 <textarea rows={ 4 } name="message" id="message" autoComplete="off"></textarea>
                                 <Button extraClasses={ bannerButton } type="submit" text={`Send message`} alt={``} />
                             </form>
