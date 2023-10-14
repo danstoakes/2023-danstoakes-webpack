@@ -79,14 +79,9 @@ const ImageBesideText = ({
             setHideSecondImage(false);
     }, []);
 
-    const FadeWrapper = ({ direction, duration, reversed, children }) => {
-        if (direction == "left" && reversed)
-            direction = "right";
-        else if (direction == "right" && reversed)
-            direction = "left";
-
+    const FadeWrapper = ({ duration, children }) => {
         return (
-            <Fade direction={ direction } duration={ duration } triggerOnce={ true }>
+            <Fade duration={ duration } triggerOnce={ true }>
                 { children }
             </Fade>
         );
@@ -145,7 +140,7 @@ const ImageBesideText = ({
                 </>
             ) : (
                 <>
-                    <FadeWrapper direction="left" duration={ 1000 } reversed={ !imageFirst }>
+                    <FadeWrapper duration={ 1000 }>
                         <div className={ sectionImage }>
                             <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt } style={{objectFit: objectFit}}></img>
                             {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
@@ -157,7 +152,7 @@ const ImageBesideText = ({
                             )}
                         </div>
                     </FadeWrapper>
-                    <FadeWrapper direction="right" duration={ 1000 } reversed={ !imageFirst }>
+                    <FadeWrapper duration={ 1000 }>
                         <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
                             <div className={ sectionText } ref={ textOneRef }>
                                 { text }
