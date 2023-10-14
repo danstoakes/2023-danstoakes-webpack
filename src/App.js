@@ -101,7 +101,7 @@ class App extends Component {
           <div className={pageContainer}>
             <Hero
               title={`Full-Stack Web Development`}
-              content={`Innovative solutions for tailored, user-focused designs with a seamless admin experience.`}
+              content={`No-fuss web development made simple. Elegant and simple solutions coupled with highly customisable and user-friendly interfaces.`}
             />
             <div className={container}>
               <main>
@@ -139,7 +139,7 @@ class App extends Component {
                         <li>Made an intricate custom filtering system that significantly reduced costs for a client.</li>
                         <li>Expanded the platform's capabilities by implementing custom per-metre pricing for fabric products.</li>
                         <li>Enabled hassle-free international capabilities by integrating full translation and currency support for a global store.</li>
-                        <li>Created a suite of customised sections for the client to effortlessly manage within the OS 2 framework.</li>
+                        <li>Created a suite of customisable sections that could be effortlessly managed within the OS 2 framework.</li>
                       </ul>
                     </>
                   }
