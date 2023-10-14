@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./index.module.scss";
 
-const Nav = ({ onOpen }) => {
+const Nav = ({ onOpen, navOpen }) => {
     const {
         desktopNav,
         hamburgerIcon,
@@ -11,23 +11,18 @@ const Nav = ({ onOpen }) => {
         navContainer
     } = styles;
 
-    const [open, setOpen] = useState(false);
-
     const toggleNav = () => {
-        setOpen(!open);
-
-        onOpen(open);
+        onOpen();
     }
 
     // The mobile nav is located in App.js
-
     return (
         <div className={navContainer}>
-            <div className={`${hamburgerIcon} ${open ? hamburgerIconOpen : ''}`} onClick={toggleNav}>
+            <div className={`${hamburgerIcon} ${navOpen ? hamburgerIconOpen : ''}`} onClick={toggleNav}>
                 <div className={hamburgerIconLine}></div>
                 <div className={hamburgerIconLine}></div>
             </div>
-            <SwipableArea isOpen={open} onOpen={toggleNav} />
+            <SwipableArea isOpen={navOpen} onOpen={toggleNav} />
             <nav className={desktopNav}>
                 <ul>
                     <li><a href="#about">About</a></li>

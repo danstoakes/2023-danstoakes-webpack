@@ -37,10 +37,12 @@ class App extends Component {
 
   componentDidMount() {
     document.querySelectorAll("a[href^='#']").forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", (e) => {
         e.preventDefault();
 
-        const hash = this.getAttribute("href");
+        this.toggleNav();
+
+        const hash = anchor.getAttribute("href");
         const target = document.querySelector(hash);
 
         if (!target) return;
@@ -93,7 +95,7 @@ class App extends Component {
 
     return (
       <>
-        <Header onOpen={this.toggleNav} />
+        <Header onOpen={this.toggleNav} navOpen={this.state.navOpen} />
         <MobileNav isOpen={navOpen} />
         <div className={`${bodyNav} ${navOpen ? bodyNavOpen : ''}`}>
           <div className={pageContainer}>
