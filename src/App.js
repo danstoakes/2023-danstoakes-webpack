@@ -145,7 +145,7 @@ class App extends Component {
                   }
                   secondText={
                     <>
-                      <p>Another Framework I use regularly is Wordpress. Given that over 40% of all websites online are driven by the platform, it's an indispensable tool for any web developer. I have experience working with Gutenberg blocks, advanced custom fields, and a diverse array of custom themes, allowing me to create tailored solutions across a wide range of projects.</p>
+                      <p>Another Framework I use regularly is Wordpress. Given that over 40% of all websites online are driven by the platform, it's an essential tool for any web developer. I have experience working on a range of different themes, utilising custom Gutenberg blocks, and advanced custom fields.</p>
                       <p>My first major project involved leading a complete website build for Powerhouse Studios, a photography agency located in Leeds. This project involved crafting a tailor-made WordPress theme to faithfully represent their brand, as well as a straightforward and highly customisable Gutenberg backend.</p>
                     </>
                   }
@@ -159,7 +159,7 @@ class App extends Component {
                   text={
                     <>
                       <h2><span className={highlightedText}>Technologies</span> and Frameworks</h2>
-                      <p>Making great websites is made a lot easier thanks to the range of fantastic frameworks that are available. The full list of technologies and frameworks I'm familiar with is available <a href="https://github.com/danstoakes/2023-tech-stack/tree/master/tech">here</a>.</p>
+                      <p>Making great websites is made a lot easier thanks to the range of fantastic frameworks that are available. View the <a href="https://github.com/danstoakes/2023-tech-stack/tree/master/tech">full list</a> of technologies and frameworks I'm familiar with.</p>
                     </>
                   }
                 />
