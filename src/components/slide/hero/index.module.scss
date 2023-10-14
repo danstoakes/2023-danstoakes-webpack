@@ -43,8 +43,18 @@
             }
         }
 
+        @keyframes fade {
+            from {
+                opacity: 0.1;
+            }
+            to {
+                opacity: 0.3;
+            }
+        }
+
         // sectionContentSVG
         &SVG {
+            animation: fade 2s ease-in-out forwards;
             bottom: 0;
             height: 100%;
             left: 0;

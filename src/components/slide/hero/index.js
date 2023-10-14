@@ -51,7 +51,7 @@ const Hero = ({ backgroundImage, title, content }) => {
         >
             <div className={ sectionContentWrapper }>
                 <div className={ sectionContent }>
-                    <Fade direction="left" duration={ 1000 }>
+                    <Fade direction="left" duration={ 1000 } triggerOnce={true}>
                         <h1>{ title }</h1>
                     </Fade>
                     <p className={`${ sectionContentText } ${ typed ? sectionContentTyped : '' }`} ref={ contentRef }>{ content }</p>

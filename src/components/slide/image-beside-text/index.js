@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Fade } from "react-awesome-reveal";
 
 import getHeaderHeight, { getPaddingHeight } from '../../../lib/header-height';
 
@@ -79,14 +78,6 @@ const ImageBesideText = ({
             setHideSecondImage(false);
     }, []);
 
-    const FadeWrapper = ({ duration, children }) => {
-        return (
-            <Fade duration={ duration } triggerOnce={ true }>
-                { children }
-            </Fade>
-        );
-    };
-
     return (
         <Slide
             backgroundImage={ backgroundImage } 
@@ -140,32 +131,28 @@ const ImageBesideText = ({
                 </>
             ) : (
                 <>
-                    <FadeWrapper duration={ 1000 }>
-                        <div className={ sectionImage }>
-                            <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt } style={{objectFit: objectFit}}></img>
-                            {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
-                            {secondImage && (
-                                <>
-                                    <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } style={{objectFit: objectFit}} />
-                                    {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
-                                </>
-                            )}
+                    <div className={ sectionImage }>
+                        <img className={ scrolled ? sectionImageHidden : "" } src={ image } alt={ imageAlt } style={{objectFit: objectFit}}></img>
+                        {imageAlt && !imageAltHidden && <span className={ scrolled ? sectionImageHidden : "" }>{ imageAlt }</span>}
+                        {secondImage && (
+                            <>
+                                <img className={ scrolled ? "" : sectionImageHidden } src={ secondImage } alt={ secondImageAlt } style={{objectFit: objectFit}} />
+                                {secondImageAlt && !secondImageAltHidden && <span className={ scrolled ? "" : sectionImageHidden }>{ secondImageAlt }</span>}
+                            </>
+                        )}
+                    </div>
+                    <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
+                        <div className={ sectionText } ref={ textOneRef }>
+                            { text }
+                            {!secondText && buttons}
                         </div>
-                    </FadeWrapper>
-                    <FadeWrapper duration={ 1000 }>
-                        <div className={`${sectionTextWrapper} ${!hideBlur && !backgroundImage ? sectionBlurred : ''}`}>
-                            <div className={ sectionText } ref={ textOneRef }>
-                                { text }
-                                {!secondText && buttons}
+                        {secondText && (
+                            <div className={ sectionText } ref={ textTwoRef }>
+                                { secondText }
+                                { buttons }
                             </div>
-                            {secondText && (
-                                <div className={ sectionText } ref={ textTwoRef }>
-                                    { secondText }
-                                    { buttons }
-                                </div>
-                            )}
-                        </div>
-                    </FadeWrapper>
+                        )}
+                    </div>
                 </>
             )}
         </Slide>
