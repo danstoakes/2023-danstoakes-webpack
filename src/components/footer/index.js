@@ -1,6 +1,6 @@
 import React from "react";
 
-import HeroTrace from "../../assets/images/hero-trace.svg";
+import HeroTrace from "../svg";
 import SocialIcons from "../social-icons";
 
 import styles from "./index.module.scss";
@@ -14,7 +14,7 @@ const Footer = () => {
         <footer className={footer}>
             <SocialIcons />
             <p>© {currentYear} Dan Stoakes. All Rights Reserved.</p>
-            <img className={footerSVG} src={HeroTrace} alt="Circuit board trace effect" />
+            <HeroTrace extraClasses={footerSVG} />
         </footer>
     );
 };

@@ -63,14 +63,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            transform: scale(3) rotate(00deg);
             width: 100%;
-
-            @media (min-width: $breakpoint-lg) {
-                bottom: -5%;
-                height: 70%;
-                right: -5%;
-            }
         }
 
         // sectionContentText

@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 
+import HeroTrace from "../../svg";
 import Slide from "..";
-
-import HeroTrace from '../../../assets/images/hero-trace.svg';
 
 import styles from "./index.module.scss";
 
@@ -56,7 +55,8 @@ const Hero = ({ backgroundImage, title, content }) => {
                     </Fade>
                     <p className={`${ sectionContentText } ${ typed ? sectionContentTyped : '' }`} ref={ contentRef }>{ content }</p>
                 </div>
-                <img className={sectionContentSVG} src={HeroTrace} alt="Circuit board trace effect" />
+                <HeroTrace extraClasses={sectionContentSVG} />
+                {/* <img className={sectionContentSVG} src={HeroTrace} alt="Circuit board trace effect" height="1080" width="1920" /> */}
             </div>
         </Slide>
     );
