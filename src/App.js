@@ -101,7 +101,7 @@ class App extends Component {
           <div className={pageContainer}>
             <Hero
               title={`Full-Stack Web Development`}
-              content={`No-fuss web development made simple. Elegant and simple solutions coupled with highly customisable and user-friendly interfaces.`}
+              content={`No-fuss web development made easy. Elegant and simple solutions coupled with highly customisable and user-friendly interfaces.`}
             />
             <div className={container}>
               <main>
