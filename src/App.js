@@ -45,7 +45,8 @@ class App extends Component {
         const hash = anchor.getAttribute("href");
         const target = document.querySelector(hash);
 
-        if (!target) return;
+        if (!target) 
+          return;
 
         const elementPosition = target.offsetTop;
         const offsetPosition = elementPosition - getHeaderHeight();
@@ -63,25 +64,23 @@ class App extends Component {
     this.updateHtmlOverflow();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     // Call the updateHtmlOverflow function when the navOpen state changes
-    if (prevState.navOpen !== this.state.navOpen) {
+    if (prevState.navOpen !== this.state.navOpen)
       this.updateHtmlOverflow();
-    }
   }
 
-  toggleNav() {
+  toggleNav () {
     this.setState((prevState) => ({
       navOpen: !prevState.navOpen,
     }));
   }
 
-  updateHtmlOverflow() {
+  updateHtmlOverflow () {
     // Get a reference to the <html> tag
     const htmlElement = document.documentElement;
 
     // Set the overflow property based on the navOpen state
-
     if (this.state.navOpen)
       htmlElement.style.overflow = "hidden";
     else

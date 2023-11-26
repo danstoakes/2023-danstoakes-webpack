@@ -56,7 +56,6 @@ const Hero = ({ backgroundImage, title, content }) => {
                     <p className={`${ sectionContentText } ${ typed ? sectionContentTyped : '' }`} ref={ contentRef }>{ content }</p>
                 </div>
                 <HeroTrace extraClasses={sectionContentSVG} />
-                {/* <img className={sectionContentSVG} src={HeroTrace} alt="Circuit board trace effect" height="1080" width="1920" /> */}
             </div>
         </Slide>
     );

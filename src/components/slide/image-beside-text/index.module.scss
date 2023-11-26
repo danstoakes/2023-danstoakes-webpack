@@ -104,7 +104,6 @@
 
         @media (min-width: $breakpoint-xl) {
             height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
-            // overflow: hidden;
         }
 
         img {
@@ -114,7 +113,6 @@
             width: 100%;
 
             @media (min-width: $breakpoint-xl) {
-                // min-height: 30rem;
                 max-height: 30rem;
             }
         }
