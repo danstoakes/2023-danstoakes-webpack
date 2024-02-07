@@ -3,13 +3,8 @@
 .slider {
     box-sizing: border-box;
     display: block;
-    height: 8em;
     position: relative;
     width: 100%;
-
-    @media (min-width: $breakpoint-xl) {
-        height: 10em;
-    }
 
     button {
         display: none !important;

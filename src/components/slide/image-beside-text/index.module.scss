@@ -109,11 +109,12 @@
         img {
             // height: 20rem;
             object-fit: cover;
+            object-position: top;
             transition: opacity 0.5s ease-in-out;
             width: 100%;
 
             @media (min-width: $breakpoint-xl) {
-                max-height: 30rem;
+                max-height: 60vh;
             }
         }
 
