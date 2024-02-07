@@ -80,7 +80,7 @@ class App extends Component {
     // Get a reference to the <html> tag
     const htmlElement = document.documentElement;
 
-    if (window.innerWidth < 1200) {
+    if (window && typeof window !== "undefined" && window.innerWidth < 1200) {
       // Set the overflow property based on the navOpen state
       if (this.state.navOpen)
         htmlElement.style.overflow = "hidden";
