@@ -103,6 +103,10 @@
         justify-content: center;
 
         @media (min-width: $breakpoint-xl) {
+            width: 40% !important;
+        }
+
+        @media (min-width: $breakpoint-xl) {
             height: calc(100vh - #{$header-height-desktop} - (#{$padding-height-desktop} * 2));
         }
 
