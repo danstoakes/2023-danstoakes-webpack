@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "images": "node resize-images.js",
-    "build": "npm run images && webpack --mode production && cp _headers build/_headers",
+    "build": "webpack --mode production && cp _headers build/_headers",
     "serve": "webpack serve --mode production",
     "start": "webpack-dev-server --open --hot --mode development",
     "host": "webpack-dev-server --open --hot --mode development --host `ipconfig getifaddr en0`"
